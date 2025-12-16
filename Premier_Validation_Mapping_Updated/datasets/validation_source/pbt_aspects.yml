@@ -1,4 +1,39 @@
 version: 1
 schema:
   type: struct
-  fields: []
+  fields:
+  - name: id
+    type: long
+    nullable: true
+    metadata:
+      description: Unique identifier for each individual in the dataset.
+      mappings: []
+      tags: []
+  - name: name
+    type: string
+    nullable: true
+    metadata:
+      description: Full name of the individual.
+      mappings: []
+      tags: []
+  - name: email
+    type: string
+    nullable: true
+    metadata:
+      description: Email address of the individual.
+      mappings: []
+      tags: []
+  - name: age
+    type: long
+    nullable: true
+    metadata:
+      description: Age of the individual in years.
+      mappings: []
+      tags: []
+  - name: city
+    type: string
+    nullable: true
+    metadata:
+      description: City where the individual resides.
+      mappings: []
+      tags: []
