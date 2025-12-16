@@ -1,0 +1,70 @@
+{
+  "common" : {
+    "type" : "record",
+    "fields" : [ {
+      "name" : "validationRulesCatalog",
+      "kind" : {
+        "type" : "string",
+        "value" : "dfinch"
+      },
+      "optional" : false,
+      "isWorkflowNodeConfiguration" : false,
+      "isReferenced" : false
+    }, {
+      "name" : "validationRulesSchema",
+      "kind" : {
+        "type" : "string",
+        "value" : "premier_val_map"
+      },
+      "optional" : false,
+      "isWorkflowNodeConfiguration" : false,
+      "isReferenced" : false
+    }, {
+      "name" : "validationRulesTable",
+      "kind" : {
+        "type" : "string",
+        "value" : "validation_rules"
+      },
+      "optional" : false,
+      "isWorkflowNodeConfiguration" : false,
+      "isReferenced" : false
+    }, {
+      "name" : "validationOutputCatalog",
+      "kind" : {
+        "type" : "string",
+        "value" : "dfinch"
+      },
+      "optional" : false,
+      "isWorkflowNodeConfiguration" : false,
+      "isReferenced" : false
+    }, {
+      "name" : "validationOutputSchema",
+      "kind" : {
+        "type" : "string",
+        "value" : "premier_val_map"
+      },
+      "optional" : false,
+      "isWorkflowNodeConfiguration" : false,
+      "isReferenced" : false
+    }, {
+      "name" : "validationOutputTable",
+      "kind" : {
+        "type" : "string",
+        "value" : "validation_output"
+      },
+      "optional" : false,
+      "isWorkflowNodeConfiguration" : false,
+      "isReferenced" : false
+    } ]
+  },
+  "instances" : {
+    "default" : {
+      "validationRulesCatalog" : "dfinch",
+      "validationRulesSchema" : "premier_val_map",
+      "validationRulesTable" : "validation_rules",
+      "validationOutputCatalog" : "dfinch",
+      "validationOutputSchema" : "premier_val_map",
+      "validationOutputTable" : "validation_output"
+    }
+  }
+}

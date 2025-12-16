@@ -1,0 +1,46 @@
+{
+  "type" : "record",
+  "fields" : [ {
+    "name" : "validationRulesCatalog",
+    "kind" : {
+      "type" : "string",
+      "value" : "dfinch"
+    },
+    "optional" : false
+  }, {
+    "name" : "validationRulesSchema",
+    "kind" : {
+      "type" : "string",
+      "value" : "premier_val_map"
+    },
+    "optional" : false
+  }, {
+    "name" : "validationRulesTable",
+    "kind" : {
+      "type" : "string",
+      "value" : "validation_rules"
+    },
+    "optional" : false
+  }, {
+    "name" : "validationOutputCatalog",
+    "kind" : {
+      "type" : "string",
+      "value" : "dfinch"
+    },
+    "optional" : false
+  }, {
+    "name" : "validationOutputSchema",
+    "kind" : {
+      "type" : "string",
+      "value" : "premier_val_map"
+    },
+    "optional" : false
+  }, {
+    "name" : "validationOutputTable",
+    "kind" : {
+      "type" : "string",
+      "value" : "validation_output"
+    },
+    "optional" : false
+  } ]
+}

@@ -1,0 +1,356 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "34673",
+    "jobId" : "jobs/validation_mapping_job",
+    "name" : "validation_mapping_job",
+    "schedule" : "None",
+    "scheduleTimeZone" : "UTC",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : false,
+    "defaultClusterSize" : "small_job",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false,
+      "onDurationWarningThresholdExceeded" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false,
+        "onDurationWarningThresholdExceeded" : false
+      },
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false,
+      "onDurationWarningThresholdExceeded" : false
+    }
+  },
+  "processes" : {
+    "n6I_q-wMIW71snEdN_T7-$$PSbvrA9Vte66lCWOZn23J" : {
+      "id" : "n6I_q-wMIW71snEdN_T7-$$PSbvrA9Vte66lCWOZn23J",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Pipeline_0",
+        "slug" : "Pipeline_0",
+        "x" : 100,
+        "y" : 120
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "W4C6iTJ7P-43z0lKaV8_J$$9CWRkVhO-tqLMuDT8FkHq",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "rlBbeiNmRtJQvuIyB_5uz$$TLvJcSJZ9vfqJ8vSm6pE7",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
+        },
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false,
+        "onDurationWarningThresholdExceeded" : false
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/updated_iterator",
+        "configurations" : {
+          "selectedInstance" : "default",
+          "selectedProjectInstance" : "default",
+          "projectInstances" : [ "default" ],
+          "instances" : {
+            "Premier_Updated_Validation_Mapping" : [ "default" ]
+          },
+          "overrides" : { },
+          "schema" : [ {
+            "name" : "validationRulesCatalog",
+            "isProjectConfig" : true,
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "dfinch"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "validationRulesSchema",
+            "isProjectConfig" : true,
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "premier_val_map"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "validationRulesTable",
+            "isProjectConfig" : true,
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "validation_rules"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "validationOutputCatalog",
+            "isProjectConfig" : true,
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "dfinch"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "validationOutputSchema",
+            "isProjectConfig" : true,
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "premier_val_map"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "validationOutputTable",
+            "isProjectConfig" : true,
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "validation_output"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "validateTablesIterator",
+            "optional" : false,
+            "kind" : {
+              "type" : "record",
+              "fields" : [ {
+                "name" : "validationRulesCatalog",
+                "isProjectConfig" : true,
+                "optional" : false,
+                "kind" : {
+                  "type" : "string",
+                  "value" : "dfinch"
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "validationRulesSchema",
+                "isProjectConfig" : true,
+                "optional" : false,
+                "kind" : {
+                  "type" : "string",
+                  "value" : "premier_val_map"
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "validationRulesTable",
+                "isProjectConfig" : true,
+                "optional" : false,
+                "kind" : {
+                  "type" : "string",
+                  "value" : "validation_rules"
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "validationOutputCatalog",
+                "isProjectConfig" : true,
+                "optional" : false,
+                "kind" : {
+                  "type" : "string",
+                  "value" : "dfinch"
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "validationOutputSchema",
+                "isProjectConfig" : true,
+                "optional" : false,
+                "kind" : {
+                  "type" : "string",
+                  "value" : "premier_val_map"
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "validationOutputTable",
+                "isProjectConfig" : true,
+                "optional" : false,
+                "kind" : {
+                  "type" : "string",
+                  "value" : "validation_output"
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "source_catalog",
+                "optional" : false,
+                "kind" : {
+                  "type" : "string",
+                  "value" : ""
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "source_schema",
+                "optional" : false,
+                "kind" : {
+                  "type" : "string",
+                  "value" : ""
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "source_table",
+                "optional" : false,
+                "kind" : {
+                  "type" : "string",
+                  "value" : ""
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "table_key",
+                "optional" : false,
+                "kind" : {
+                  "type" : "string",
+                  "value" : ""
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "validation_run_id",
+                "optional" : false,
+                "kind" : {
+                  "type" : "string",
+                  "value" : ""
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "validation_timestamp",
+                "optional" : false,
+                "kind" : {
+                  "type" : "timestamp",
+                  "value" : "01-01-1970T00:00:00"
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
+                "name" : "validations",
+                "optional" : false,
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "record",
+                    "fields" : [ {
+                      "name" : "col",
+                      "optional" : false,
+                      "kind" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "isReferenced" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    }, {
+                      "name" : "logic",
+                      "optional" : false,
+                      "kind" : {
+                        "type" : "string",
+                        "value" : null
+                      },
+                      "isReferenced" : false,
+                      "isWorkflowNodeConfiguration" : false
+                    } ]
+                  },
+                  "value" : [ ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              } ]
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : true
+          } ]
+        },
+        "projectId" : "106429"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : "cmOwVNWnGcac9JGpWTWc4"
+    },
+    "cmOwVNWnGcac9JGpWTWc4" : {
+      "id" : "cmOwVNWnGcac9JGpWTWc4",
+      "component" : "Cluster",
+      "metadata" : {
+        "label" : "Cluster_1",
+        "slug" : "Cluster_1",
+        "x" : 20,
+        "y" : 20,
+        "width" : 200,
+        "height" : 260
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
+        },
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false,
+        "onDurationWarningThresholdExceeded" : false
+      },
+      "properties" : {
+        "clusterSize" : "small_job"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
+    }
+  },
+  "connections" : [ ]
+}

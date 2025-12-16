@@ -1,0 +1,123 @@
+{
+  "fabric_id" : "34673",
+  "components" : [ {
+    "PipelineComponent" : {
+      "path" : "/Volumes/dfinch/premier_schema/premier_volume/artifacts//prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/validation_mapping-1.0-py3-none-any.whl",
+      "nodeName" : "Pipeline_0",
+      "id" : "n6I_q-wMIW71snEdN_T7-$$PSbvrA9Vte66lCWOZn23J",
+      "language" : "python",
+      "projectConfigPath" : "/Volumes/dfinch/premier_schema/premier_volume/artifacts//prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/configurations",
+      "pipelineId" : "pipelines/updated_iterator"
+    }
+  } ],
+  "request" : {
+    "format" : "MULTI_TASK",
+    "name" : "validation_mapping_job",
+    "job_clusters" : [ {
+      "job_cluster_key" : "validation_mapping_job_default_small_job",
+      "new_cluster" : {
+        "ssh_public_keys" : [ ],
+        "spark_version" : "15.4.x-scala2.12",
+        "node_type_id" : "i3.xlarge",
+        "autoscale" : {
+          "min_workers" : 1,
+          "max_workers" : 4
+        },
+        "custom_tags" : { },
+        "init_scripts" : [ ],
+        "spark_conf" : {
+          "spark.prophecy.metadata.fabric.id" : "34673",
+          "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/validation_mapping_job",
+          "spark.prophecy.metadata.is.interactive.run" : "false",
+          "spark.prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
+          "spark.prophecy.metadata.user.id" : "11022",
+          "spark.prophecy.tasks" : "H4sIAAAAAAAAAKtWCsgsSM3JzEuNN1CyUiqAcor1SwtSEktSU+IzS1KLEkvyi5RqAXtuGEUrAAAA",
+          "spark.prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
+          "spark.prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
+          "spark.prophecy.execution.metrics.disabled" : "true",
+          "spark.prophecy.execution.service.url" : "wss://app.prophecy.io/execution/eventws",
+          "spark.databricks.isv.product" : "prophecy"
+        },
+        "spark_env_vars" : {
+          "PYSPARK_PYTHON" : "/databricks/python3/bin/python3"
+        },
+        "runtime_engine" : "PHOTON",
+        "aws_attributes" : {
+          "availability" : "SPOT_WITH_FALLBACK",
+          "zone_id" : "auto",
+          "spot_bid_price_percent" : 100
+        },
+        "data_security_mode" : "DATA_SECURITY_MODE_DEDICATED",
+        "kind" : "CLASSIC_PREVIEW"
+      }
+    }, {
+      "job_cluster_key" : "Cluster_1",
+      "new_cluster" : {
+        "ssh_public_keys" : [ ],
+        "spark_version" : "15.4.x-scala2.12",
+        "node_type_id" : "i3.xlarge",
+        "autoscale" : {
+          "min_workers" : 1,
+          "max_workers" : 4
+        },
+        "custom_tags" : { },
+        "init_scripts" : [ ],
+        "spark_conf" : {
+          "spark.prophecy.metadata.fabric.id" : "34673",
+          "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/validation_mapping_job",
+          "spark.prophecy.metadata.is.interactive.run" : "false",
+          "spark.prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
+          "spark.prophecy.metadata.user.id" : "11022",
+          "spark.prophecy.tasks" : "H4sIAAAAAAAAAKtWCsgsSM3JzEuNN1CyUiqAcor1SwtSEktSU+IzS1KLEkvyi5RqAXtuGEUrAAAA",
+          "spark.prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
+          "spark.prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
+          "spark.prophecy.execution.metrics.disabled" : "true",
+          "spark.prophecy.execution.service.url" : "wss://app.prophecy.io/execution/eventws",
+          "spark.databricks.isv.product" : "prophecy"
+        },
+        "spark_env_vars" : {
+          "PYSPARK_PYTHON" : "/databricks/python3/bin/python3"
+        },
+        "runtime_engine" : "PHOTON",
+        "aws_attributes" : {
+          "availability" : "SPOT_WITH_FALLBACK",
+          "zone_id" : "auto",
+          "spot_bid_price_percent" : 100
+        },
+        "data_security_mode" : "DATA_SECURITY_MODE_DEDICATED",
+        "kind" : "CLASSIC_PREVIEW"
+      }
+    } ],
+    "email_notifications" : { },
+    "tasks" : [ {
+      "task_key" : "Pipeline_0",
+      "job_cluster_key" : "Cluster_1",
+      "python_wheel_task" : {
+        "package_name" : "validation_mapping",
+        "entry_point" : "main",
+        "parameters" : [ "-i", "default", "-pi", "default", "-pc", "/Volumes/dfinch/premier_schema/premier_volume/artifacts//prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/configurations", "-O", "{}" ]
+      },
+      "libraries" : [ {
+        "maven" : {
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.5.0-8.15.1"
+        }
+      }, {
+        "pypi" : {
+          "package" : "prophecy-libs==2.1.7"
+        }
+      }, {
+        "whl" : "/Volumes/dfinch/premier_schema/premier_volume/artifacts//prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/validation_mapping-1.0-py3-none-any.whl"
+      } ],
+      "email_notifications" : { },
+      "max_retries" : 0,
+      "run_if" : "ALL_SUCCESS"
+    } ],
+    "max_concurrent_runs" : 1
+  },
+  "cluster_mode" : {
+    "clusterMode" : "Single"
+  },
+  "secret_scope" : "prophecy_jobs_14261",
+  "sorted_processes" : [ "n6I_q-wMIW71snEdN_T7-$$PSbvrA9Vte66lCWOZn23J" ],
+  "is_prophecy_managed_fabric" : false
+}

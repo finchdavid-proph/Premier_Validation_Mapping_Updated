@@ -1,0 +1,39 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: source_catalog
+    type: string
+    nullable: true
+    metadata:
+      description: Name of the data catalog where the source data is stored.
+      mappings: []
+      tags: []
+  - name: source_schema
+    type: string
+    nullable: true
+    metadata:
+      description: Schema name within the catalog that organizes the source data.
+      mappings: []
+      tags: []
+  - name: source_table
+    type: string
+    nullable: true
+    metadata:
+      description: Table name in the source schema from which data is retrieved.
+      mappings: []
+      tags: []
+  - name: source_column
+    type: string
+    nullable: true
+    metadata:
+      description: Column name in the source table being referenced.
+      mappings: []
+      tags: []
+  - name: logic
+    type: string
+    nullable: true
+    metadata:
+      description: Business rule or condition applied to the source data.
+      mappings: []
+      tags: []
