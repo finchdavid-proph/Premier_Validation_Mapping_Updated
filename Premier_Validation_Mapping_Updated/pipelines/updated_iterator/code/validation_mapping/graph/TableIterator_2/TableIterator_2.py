@@ -7,7 +7,7 @@ from . import *
 from .config import *
 
 
-class validateTablesIterator(MetaGemExec):
+class TableIterator_2(MetaGemExec):
 
     def __init__(self, config):
         self.config = config
@@ -15,18 +15,19 @@ class validateTablesIterator(MetaGemExec):
 
     def execute(self, spark: SparkSession, subgraph_config: SubgraphConfig) -> List[DataFrame]:
         Config.update(subgraph_config)
-        df_sourceTable = sourceTable(spark)
-        df_expandValidationRules = expandValidationRules(spark, df_sourceTable)
-        df_generateFinalSchema = generateFinalSchema(spark, df_expandValidationRules)
+        df_sourceTable_1 = sourceTable_1(spark)
+        df_select_configured_columns_1 = select_configured_columns_1(spark, df_sourceTable_1)
+        df_expandValidationRules_1 = expandValidationRules_1(spark, df_select_configured_columns_1)
+        df_generateFinalSchema_1 = generateFinalSchema_1(spark, df_expandValidationRules_1)
         subgraph_config.update(Config)
 
-        return list((df_generateFinalSchema, ))
+        return list((df_generateFinalSchema_1, ))
 
     def apply(self, spark: SparkSession, in0: DataFrame, ) -> DataFrame:
         inDFs = []
         results = []
         conf_to_column = dict(
-            [("source_catalog", "source_catalog"),  ("source_schema", "source_schema"),  ("source_table", "source_table"),              ("table_key", "table_key"),  ("validation_run_id", "validation_run_id"),              ("validation_timestamp", "validation_timestamp"),  ("validations", "validations")]
+            [("source_catalog", "source_catalog"),  ("source_schema", "source_schema"),  ("source_table", "source_table"),              ("table_key", "table_key"),  ("validation_run_id", "validation_run_id"),              ("validation_timestamp", "validation_timestamp"),  ("source_columns", "source_columns"),              ("validations", "validations")]
         )
 
         if in0.count() > 1000:

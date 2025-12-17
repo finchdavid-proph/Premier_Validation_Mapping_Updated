@@ -61,7 +61,7 @@
     "default" : {
       "validationRulesCatalog" : "dfinch",
       "validationRulesSchema" : "premier_val_map",
-      "validationRulesTable" : "validation_rules",
+      "validationRulesTable" : "validation_rules_update",
       "validationOutputCatalog" : "dfinch",
       "validationOutputSchema" : "premier_val_map",
       "validationOutputTable" : "validation_output"

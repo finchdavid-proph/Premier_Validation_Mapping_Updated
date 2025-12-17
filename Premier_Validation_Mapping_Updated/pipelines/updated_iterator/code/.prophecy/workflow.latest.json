@@ -104,7 +104,7 @@
           "isReferenced" : false,
           "isProjectConfig" : true
         }, {
-          "name" : "validateTablesIterator",
+          "name" : "TableIterator_2",
           "kind" : {
             "type" : "record",
             "fields" : [ {
@@ -222,15 +222,32 @@
               "isWorkflowNodeConfiguration" : false,
               "isReferenced" : false
             }, {
+              "name" : "source_columns",
+              "kind" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "string",
+                  "value" : null
+                },
+                "value" : [ ]
+              },
+              "optional" : false,
+              "isWorkflowNodeConfiguration" : false,
+              "isReferenced" : false
+            }, {
               "name" : "validations",
               "kind" : {
                 "type" : "array",
                 "elementType" : {
                   "type" : "record",
                   "fields" : [ {
-                    "name" : "col",
+                    "name" : "cols",
                     "kind" : {
-                      "type" : "string",
+                      "type" : "array",
+                      "elementType" : {
+                        "type" : "string",
+                        "value" : null
+                      },
                       "value" : null
                     },
                     "optional" : false,
@@ -331,7 +348,7 @@
           "default" : {
             "validationRulesCatalog" : "dfinch",
             "validationRulesSchema" : "premier_val_map",
-            "validationRulesTable" : "validation_rules",
+            "validationRulesTable" : "validation_rules_update",
             "validationOutputCatalog" : "dfinch",
             "validationOutputSchema" : "premier_val_map",
             "validationOutputTable" : "validation_output"
@@ -384,19 +401,54 @@
     "target" : "RlV-DQk1VxayJI5EIvY2j$$U4bHBv6FKXUaYNKG7jcoJ",
     "targetPort" : "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX"
   }, {
-    "id" : "bcCTLee9PnU0LwqQrvRx0",
+    "id" : "gNKv_NVfWJXmon-tj-Wu-",
     "source" : "RlV-DQk1VxayJI5EIvY2j$$U4bHBv6FKXUaYNKG7jcoJ",
     "sourcePort" : "-FRKVOoiSy8cz9kA9y9Hp$$fB411Q7ar-7DYP5hOvPtr",
-    "target" : "yft0aPVkoHcGVBzKHSYDK$$CSzIZqnF1R8IvFcPzv4VG",
-    "targetPort" : "nX2ed_14c55pbn2rks6Rw$$5wKi5vh7qQ9CZXwtHcPYm"
+    "target" : "TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ",
+    "targetPort" : "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6"
   }, {
-    "id" : "5ViFOKmnZHEEfkfqFgLZA",
-    "source" : "yft0aPVkoHcGVBzKHSYDK$$CSzIZqnF1R8IvFcPzv4VG",
-    "sourcePort" : "_GUsjYw_RcrcvEKrp8ITF$$XWU_PfRSTKjnok0Jx24fI",
-    "target" : "Iwp7rjvKEp-KTSBH6HrUT$$8N9j6qaXcJiwdgm15MSU7",
-    "targetPort" : "GvmYi1gf3EBXfUZvPDsZN$$f2e-a7f2xlQaMgICyNfOJ"
+    "id" : "y_gacJ2C6_OwkzTJ_Lmaa$$ECC28yRLvyEeBbSnLTWGK",
+    "source" : "TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ",
+    "sourcePort" : "5EESIXcT15_Ye6ss7fBLH$$rGPe4ZIW1aFYIpowkYzig",
+    "target" : "AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP",
+    "targetPort" : "eKJMaflTy8bI4BimOuUPA$$dTDnaY0dkbw3AWo4pB1rv"
+  }, {
+    "id" : "TkOPV3ReeZnJGICJWr-N7",
+    "source" : "AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP",
+    "sourcePort" : "YOXcpQQVxYkGL6DkpJCR0$$ZDC-eMzgRMJwDOusMnGC1",
+    "target" : "x7D8myrujXWbt_c0QDC7K$$r-XuZoR1zMB2mqRbOSsJJ",
+    "targetPort" : "Zsv3bdg6hhSc4AfiI8njG$$PTwMMJJ6FCxKQMrVzwcBn"
   } ],
   "processes" : {
+    "x7D8myrujXWbt_c0QDC7K$$r-XuZoR1zMB2mqRbOSsJJ" : {
+      "id" : "x7D8myrujXWbt_c0QDC7K$$r-XuZoR1zMB2mqRbOSsJJ",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "validationOutput",
+        "slug" : "validationOutput",
+        "x" : 1020,
+        "y" : 20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Stores validation results for future business analysis and reporting.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Zsv3bdg6hhSc4AfiI8njG$$PTwMMJJ6FCxKQMrVzwcBn",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/iterator_output"
+      }
+    },
     "wSlTUTPO60oNFaD7JJJXm$$WSLmWTv7qDxMYx5AACMRf" : {
       "id" : "wSlTUTPO60oNFaD7JJJXm$$WSLmWTv7qDxMYx5AACMRf",
       "component" : "Reformat",
@@ -409,7 +461,7 @@
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Enriches data records with source information and unique validation identifiers, supporting traceability and auditability.",
+        "comment" : "Enriches data with source details and unique validation identifiers for tracking and audit purposes.",
         "autoUpdateComment" : true,
         "dataPreview" : false,
         "showRecordsCount" : false
@@ -434,7 +486,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "Schema name that organizes the source data within the catalog.",
+                "description" : "Schema name within the catalog that organizes the source data.",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -443,7 +495,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "Table name from which the data is sourced.",
+                "description" : "Table name in the source schema from which data is retrieved.",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -452,7 +504,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "Specific column in the source table being referenced.",
+                "description" : "List of column names from the source table being referenced.",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -461,7 +513,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "Business rule or transformation applied to the source data.",
+                "description" : "Business rule or condition applied to the source data.",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -501,10 +553,10 @@
           },
           "description" : ""
         }, {
-          "target" : "source_column",
+          "target" : "source_columns",
           "expression" : {
             "format" : "sql",
-            "expression" : "source_column"
+            "expression" : "source_columns"
           },
           "description" : ""
         }, {
@@ -538,538 +590,45 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##source_table", "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##logic", "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##source_schema", "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##source_catalog", "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##source_column" ]
+        "columnsSelector" : [ "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##source_catalog", "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##logic", "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##source_schema", "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##source_table" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.53&projectSubscriptionProjectId=12654&path=gems/Reformat",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
-    "Iwp7rjvKEp-KTSBH6HrUT$$8N9j6qaXcJiwdgm15MSU7" : {
-      "id" : "Iwp7rjvKEp-KTSBH6HrUT$$8N9j6qaXcJiwdgm15MSU7",
-      "component" : "Target",
+    "AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP" : {
+      "id" : "AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP",
+      "component" : "TableIterator",
       "metadata" : {
-        "label" : "validationOutput",
-        "slug" : "validationOutput",
+        "label" : "TableIterator_2",
+        "slug" : "TableIterator_2",
         "x" : 820,
         "y" : 20,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Saves validation results into a central business data repository for future analysis and reporting.",
-        "autoUpdateComment" : true
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "GvmYi1gf3EBXfUZvPDsZN$$f2e-a7f2xlQaMgICyNfOJ",
-          "slug" : "in0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "validation_run_id",
-              "type" : "string",
-              "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "validation_timestamp",
-              "type" : "timestamp",
-              "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "source_catalog",
-              "type" : "string",
-              "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "source_schema",
-              "type" : "string",
-              "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "source_table",
-              "type" : "string",
-              "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "source_column",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "validation_result",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "validation_logic",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "row_count",
-              "type" : "long",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "validation_duration_ms",
-              "type" : "long",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
-        } ],
-        "outputs" : [ ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/iterator_output"
-      }
-    },
-    "RlV-DQk1VxayJI5EIvY2j$$U4bHBv6FKXUaYNKG7jcoJ" : {
-      "id" : "RlV-DQk1VxayJI5EIvY2j$$U4bHBv6FKXUaYNKG7jcoJ",
-      "component" : "Aggregate",
-      "metadata" : {
-        "label" : "groupByTable",
-        "slug" : "groupByTable",
-        "x" : 420,
-        "y" : 20,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false,
-        "comment" : "Summarizes validation results for each data table, highlighting the latest validation and associated checks.",
-        "autoUpdateComment" : true,
         "dataPreview" : false,
         "showRecordsCount" : false
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX",
-          "slug" : "in0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "source_catalog",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "Name of the data catalog where the source data is stored.",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "source_schema",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "Schema name that organizes the source data within the catalog.",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "source_table",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "Table name from which the data is sourced.",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "source_column",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "Specific column in the source table being referenced.",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "logic",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "Business rule or transformation applied to the source data.",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "table_key",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "validation_run_id",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "validation_timestamp",
-              "type" : "timestamp",
-              "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
+          "id" : "eKJMaflTy8bI4BimOuUPA$$dTDnaY0dkbw3AWo4pB1rv",
+          "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "-FRKVOoiSy8cz9kA9y9Hp$$fB411Q7ar-7DYP5hOvPtr",
-          "slug" : "out"
+          "id" : "YOXcpQQVxYkGL6DkpJCR0$$ZDC-eMzgRMJwDOusMnGC1",
+          "slug" : "out0"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
-        "allIns" : false,
-        "doPivot" : false,
-        "aggregate" : [ {
-          "target" : "validation_run_id",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "max(validation_run_id)"
-          },
-          "description" : "",
-          "_row_id" : "FaDD08xeT4"
-        }, {
-          "target" : "validation_timestamp",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "max(validation_timestamp)"
-          },
-          "description" : "",
-          "_row_id" : "jqauTupl7U"
-        }, {
-          "target" : "validations",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "collect_list(struct(source_column AS col, logic AS logic))"
-          },
-          "description" : "",
-          "_row_id" : "RfPkkhp94s"
-        } ],
-        "allowSelection" : true,
-        "pivotColumn" : null,
-        "pivotValues" : [ ],
-        "importString" : "",
-        "activeTab" : "aggregate",
-        "columnsSelector" : [ "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##source_table", "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##source_schema", "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##source_catalog", "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##source_column", "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##validation_timestamp", "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##table_key", "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##logic", "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##validation_run_id" ],
-        "groupBy" : [ {
-          "target" : "source_catalog",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "source_catalog"
-          },
-          "description" : "",
-          "_row_id" : null
-        }, {
-          "target" : "source_schema",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "source_schema"
-          },
-          "description" : "",
-          "_row_id" : null
-        }, {
-          "target" : "source_table",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "source_table"
-          },
-          "description" : "",
-          "_row_id" : null
-        }, {
-          "target" : "table_key",
-          "expression" : {
-            "format" : "sql",
-            "expression" : "table_key"
-          },
-          "description" : "",
-          "_row_id" : null
-        } ]
-      },
-      "componentInfo" : {
-        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.53&projectSubscriptionProjectId=12654&path=gems/Aggregate",
-        "projectName" : "ProphecySparkBasicsPython"
-      }
-    },
-    "yft0aPVkoHcGVBzKHSYDK$$CSzIZqnF1R8IvFcPzv4VG" : {
-      "id" : "yft0aPVkoHcGVBzKHSYDK$$CSzIZqnF1R8IvFcPzv4VG",
-      "component" : "TableIterator",
-      "metadata" : {
-        "label" : "validateTablesIterator",
-        "slug" : "validateTablesIterator",
-        "x" : 620,
-        "y" : 20,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false,
-        "dataPreview" : false,
-        "showRecordsCount" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "nX2ed_14c55pbn2rks6Rw$$5wKi5vh7qQ9CZXwtHcPYm",
-          "slug" : "in0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "source_catalog",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "Name of the data catalog where the source data is stored.",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "source_schema",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "Schema name that organizes the source data within the catalog.",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "source_table",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "Table name from which the data is sourced.",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "table_key",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "validation_run_id",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "validation_timestamp",
-              "type" : "timestamp",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "validations",
-              "type" : {
-                "type" : "array",
-                "elementType" : {
-                  "type" : "struct",
-                  "fields" : [ {
-                    "name" : "col",
-                    "type" : "string",
-                    "nullable" : true,
-                    "metadata" : {
-                      "description" : "Specific column in the source table being referenced.",
-                      "mappings" : [ ],
-                      "tags" : [ ]
-                    }
-                  }, {
-                    "name" : "logic",
-                    "type" : "string",
-                    "nullable" : true,
-                    "metadata" : {
-                      "description" : "Business rule or transformation applied to the source data.",
-                      "mappings" : [ ],
-                      "tags" : [ ]
-                    }
-                  } ]
-                },
-                "containsNull" : false
-              },
-              "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
-        } ],
-        "outputs" : [ {
-          "id" : "_GUsjYw_RcrcvEKrp8ITF$$XWU_PfRSTKjnok0Jx24fI",
-          "slug" : "out0",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "validation_run_id",
-              "type" : "string",
-              "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "validation_timestamp",
-              "type" : "timestamp",
-              "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "source_catalog",
-              "type" : "string",
-              "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "source_schema",
-              "type" : "string",
-              "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "source_table",
-              "type" : "string",
-              "nullable" : false,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "source_column",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "validation_result",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "validation_logic",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "row_count",
-              "type" : "long",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "validation_duration_ms",
-              "type" : "long",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : true,
-        "autoUpdateOnRun" : true
       },
       "properties" : {
         "metagemProperty" : {
-          "availableColumnNames" : [ "source_catalog", "source_schema", "source_table", "table_key", "validation_run_id", "validation_timestamp", "validations" ],
-          "availableConfigFieldNames" : [ "validationRulesCatalog", "validationRulesSchema", "validationRulesTable", "validationOutputCatalog", "validationOutputSchema", "validationOutputTable", "source_catalog", "source_schema", "source_table", "table_key", "validation_run_id", "validation_timestamp", "validations" ],
+          "availableColumnNames" : [ ],
+          "availableConfigFieldNames" : [ "validationRulesCatalog", "validationRulesSchema", "validationRulesTable", "validationOutputCatalog", "validationOutputSchema", "validationOutputTable", "source_catalog", "source_schema", "source_table", "table_key", "validation_run_id", "validation_timestamp", "source_columns", "validations" ],
           "numberOfThreads" : "5",
           "maxIteration" : "1000",
           "parallelismEnabled" : false,
@@ -1092,373 +651,83 @@
             "configName" : "validation_timestamp",
             "columnName" : "validation_timestamp"
           }, {
+            "configName" : "source_columns",
+            "columnName" : "source_columns"
+          }, {
             "configName" : "validations",
             "columnName" : "validations"
           } ]
         }
       },
       "connections" : [ {
-        "id" : "vUBA4mFc-e4XG3x02U6z_",
-        "source" : "yft0aPVkoHcGVBzKHSYDK$$CSzIZqnF1R8IvFcPzv4VG",
-        "sourcePort" : "nX2ed_14c55pbn2rks6Rw$$5wKi5vh7qQ9CZXwtHcPYm",
-        "target" : "BwQ0Zf7-w1CuJbxNN6Yyp$$Pp_2s52YYBAz4uqd3FDH3",
-        "targetPort" : "_aR1uwa8Mlu1Mp9565bgu$$xsP5QEWTxgO83Mu7SEtRB",
+        "id" : "ATCN36R9F28Q9XJYJ29Oi",
+        "source" : "AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP",
+        "sourcePort" : "eKJMaflTy8bI4BimOuUPA$$dTDnaY0dkbw3AWo4pB1rv",
+        "target" : "bpk1DJSP3PUvP8PiKja7P$$NXDMUxeW30xqGqkVY79O4",
+        "targetPort" : "MfiQbaLjwjpio5iVM5GIQ$$_SwbpyTn1JnOWrAdQHE9q",
         "visualProperty" : {
           "isHidden" : true
         }
       }, {
-        "id" : "Fd-3oINQ0yd4tFnvU_rDz",
-        "source" : "ZkvhDlm2jJTdkLU4slJHh$$pszDllZyh6yfd15A0-6Et",
-        "sourcePort" : "ogIwLlM47VD6_Un8Ro62a$$B0D3Wk58LmJjtOrHOAAfl",
-        "target" : "KE_z6md4q7sY0T_2hSZBS$$SpLog4BAhlbzA_RcnLB4w",
-        "targetPort" : "L3CP3B110CdeJO2P4jCJE$$8n3GeYhcLSSjDpvSJHkPS"
+        "id" : "f_qysMrqzeCBa048SfO-l",
+        "source" : "7LnCuxjGXtjiVzycTX69f$$hopzjF15tpolCX6UqZBuL",
+        "sourcePort" : "IWjEEXA__KcbxC9vQJYI6$$It4AxQ11DNcs8UWvItCvV",
+        "target" : "Ettqs0pwjrkGipv-_ppw4$$ZTf0Y_Ho16nA41cJMWDaq",
+        "targetPort" : "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA"
       }, {
-        "id" : "djw3g1eqYX2Cptq0rvWFB$$88rHLvN4DQUjyRamD1WbZ",
-        "source" : "KE_z6md4q7sY0T_2hSZBS$$SpLog4BAhlbzA_RcnLB4w",
-        "sourcePort" : "fYyd42v1wn1A3-BeWhkr2$$2Mb6uvi_gMyfdln7LuYKZ",
-        "target" : "BohmaOGBARdNVjilje4OI$$VpeczLAbsrcVjJBxR7i9B",
-        "targetPort" : "xfiyy2G7k0vP7aIxi-GD6$$hVoi5RMFoFx33DCHB-_aF"
+        "id" : "Boq7j9fy6W7A6zs9wlPDu",
+        "source" : "K4ezNkiVa8dckEjYdXh3S$$UOOVRg7wKPDpRP9guVTHe",
+        "sourcePort" : "jVZepK5wCfW7Rlu3Znh5j$$I-8Sdu2TkO-Tvws1xBc4O",
+        "target" : "BN-yoBhdGOazyOQv0cHEt$$nURrJ0rVuXs4qJdwTLfb7",
+        "targetPort" : "TDiy7J1OuClXPGrFUrgB4$$7wTJyQzGnDHK4dAOx_POO"
       }, {
-        "id" : "TnDRPLXCGy55E62PpBKXH$$zeyN4qgOwA1JknLg4InEq",
-        "source" : "u8pF0J8KYTyvGYGEuHBhL$$1r2ctV6w9vUL5lPg3_Uqa",
-        "sourcePort" : "yOFuzTQnkDVtR0ydCVRoD$$eUbhgRl7hzMxW50b35mhP",
-        "target" : "yft0aPVkoHcGVBzKHSYDK$$CSzIZqnF1R8IvFcPzv4VG",
-        "targetPort" : "_GUsjYw_RcrcvEKrp8ITF$$XWU_PfRSTKjnok0Jx24fI",
+        "id" : "UdXkVNIN1Zev2Uoywc232",
+        "source" : "BN-yoBhdGOazyOQv0cHEt$$nURrJ0rVuXs4qJdwTLfb7",
+        "sourcePort" : "SI3jrBWtbmFBbyeTF56_V$$PyBxwqslxWNS-e4Wo9Bfj",
+        "target" : "7LnCuxjGXtjiVzycTX69f$$hopzjF15tpolCX6UqZBuL",
+        "targetPort" : "OAvjEvgmuvwQ4EhZ0Ntn_$$Dd0T5olczRwy4hAklkJ3c"
+      }, {
+        "id" : "VnE8TUlo8HTAC8I590Ehb$$k4FCGUj1vpbHr1dLvXXK4",
+        "source" : "xfrZM74S3evVJJPkFPBq3$$EyMYyLtOO9t4pDxM3taRf",
+        "sourcePort" : "wmXxKAvm8h6BhnKxdXvs1$$kOzKuF7w2QX2gUjqxLTYh",
+        "target" : "AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP",
+        "targetPort" : "YOXcpQQVxYkGL6DkpJCR0$$ZDC-eMzgRMJwDOusMnGC1",
         "visualProperty" : {
           "isHidden" : false
         }
       }, {
-        "id" : "ay_kY8jQ-4zLzg5DQStqB",
-        "source" : "BohmaOGBARdNVjilje4OI$$VpeczLAbsrcVjJBxR7i9B",
-        "sourcePort" : "9AkFYsJTDAy4OZilVGdlY$$UUdwP7HTwndOKqa7u7_Ig",
-        "target" : "u8pF0J8KYTyvGYGEuHBhL$$1r2ctV6w9vUL5lPg3_Uqa",
-        "targetPort" : "8BVkfx2xa1NPsfznyF3al$$s9nt1Eh5UQuVAEtZEyS6e",
-        "visualProperty" : {
-          "isHidden" : false
-        }
+        "id" : "bMrtGZbsMOf812y2rGGfz",
+        "source" : "Ettqs0pwjrkGipv-_ppw4$$ZTf0Y_Ho16nA41cJMWDaq",
+        "sourcePort" : "xYFO1b2xu9oEyvL4b-QUl$$PLsPpwBgAg7JBIiGMTbyS",
+        "target" : "xfrZM74S3evVJJPkFPBq3$$EyMYyLtOO9t4pDxM3taRf",
+        "targetPort" : "3qUKVk1iEiy4jdP8HnkIh$$jSEh0uJnADnUooK3of9vW"
       } ],
       "processes" : {
-        "BwQ0Zf7-w1CuJbxNN6Yyp$$Pp_2s52YYBAz4uqd3FDH3" : {
-          "id" : "BwQ0Zf7-w1CuJbxNN6Yyp$$Pp_2s52YYBAz4uqd3FDH3",
-          "component" : "ControlFlowInput",
-          "metadata" : {
-            "label" : "TableIterator_Input",
-            "slug" : "TableIterator_Input",
-            "x" : 0,
-            "y" : 0,
-            "phase" : 0,
-            "cache" : false,
-            "detailedStats" : false,
-            "isImported" : false,
-            "visualProperty" : {
-              "isHidden" : true
-            }
-          },
-          "ports" : {
-            "inputs" : [ {
-              "id" : "_aR1uwa8Mlu1Mp9565bgu$$xsP5QEWTxgO83Mu7SEtRB",
-              "slug" : "in0",
-              "schema" : {
-                "type" : "struct",
-                "fields" : [ {
-                  "name" : "source_catalog",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "Name of the data catalog where the source data is stored.",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "source_schema",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "Schema name that organizes the source data within the catalog.",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "source_table",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "Table name from which the data is sourced.",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "table_key",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "validation_run_id",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "validation_timestamp",
-                  "type" : "timestamp",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "validations",
-                  "type" : {
-                    "type" : "array",
-                    "elementType" : {
-                      "type" : "struct",
-                      "fields" : [ {
-                        "name" : "col",
-                        "type" : "string",
-                        "nullable" : true,
-                        "metadata" : {
-                          "description" : "Specific column in the source table being referenced.",
-                          "mappings" : [ ],
-                          "tags" : [ ]
-                        }
-                      }, {
-                        "name" : "logic",
-                        "type" : "string",
-                        "nullable" : true,
-                        "metadata" : {
-                          "description" : "Business rule or transformation applied to the source data.",
-                          "mappings" : [ ],
-                          "tags" : [ ]
-                        }
-                      } ]
-                    },
-                    "containsNull" : false
-                  },
-                  "nullable" : false,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                } ]
-              },
-              "isStreaming" : false
-            } ],
-            "outputs" : [ ],
-            "selectedInputFields" : [ ],
-            "isCustomOutputSchema" : false,
-            "autoUpdateOnRun" : false
-          },
-          "properties" : {
-            "minNumberOfInPorts" : 1,
-            "allowOutportAddDelete" : true,
-            "description" : "",
-            "allowInportAddDelete" : true,
-            "minNumberOfOutPorts" : 0,
-            "allowOutportRename" : true,
-            "allowInportRename" : true
-          },
-          "componentInfo" : {
-            "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.53&projectSubscriptionProjectId=12654&path=gems/ControlFlowInput",
-            "projectName" : "ProphecySparkBasicsPython"
-          }
-        },
-        "ZkvhDlm2jJTdkLU4slJHh$$pszDllZyh6yfd15A0-6Et" : {
-          "id" : "ZkvhDlm2jJTdkLU4slJHh$$pszDllZyh6yfd15A0-6Et",
-          "component" : "Source",
-          "metadata" : {
-            "label" : "sourceTable",
-            "slug" : "sourceTable",
-            "x" : 20,
-            "y" : 20,
-            "phase" : 0,
-            "cache" : false,
-            "detailedStats" : false,
-            "isImported" : false,
-            "comment" : "Retrieves business data from a specified source table for further analysis or reporting.",
-            "autoUpdateComment" : true
-          },
-          "ports" : {
-            "inputs" : [ ],
-            "outputs" : [ {
-              "id" : "ogIwLlM47VD6_Un8Ro62a$$B0D3Wk58LmJjtOrHOAAfl",
-              "slug" : "out"
-            } ],
-            "selectedInputFields" : [ ],
-            "isCustomOutputSchema" : false,
-            "autoUpdateOnRun" : false
-          },
-          "properties" : {
-            "datasetId" : "datasets/validation_source"
-          }
-        },
-        "KE_z6md4q7sY0T_2hSZBS$$SpLog4BAhlbzA_RcnLB4w" : {
-          "id" : "KE_z6md4q7sY0T_2hSZBS$$SpLog4BAhlbzA_RcnLB4w",
-          "component" : "Script",
-          "metadata" : {
-            "label" : "expandValidationRules",
-            "slug" : "expandValidationRules",
-            "x" : 220,
-            "y" : 20,
-            "phase" : 0,
-            "cache" : false,
-            "detailedStats" : false,
-            "isImported" : false,
-            "comment" : "Evaluates data quality rules on business data, providing detailed reports on rule outcomes and performance for monitoring and compliance purposes.",
-            "autoUpdateComment" : true
-          },
-          "ports" : {
-            "inputs" : [ {
-              "id" : "L3CP3B110CdeJO2P4jCJE$$8n3GeYhcLSSjDpvSJHkPS",
-              "slug" : "in0",
-              "schema" : {
-                "type" : "struct",
-                "fields" : [ {
-                  "name" : "id",
-                  "type" : "long",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "Unique identifier for each individual in the dataset.",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "name",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "Full name of the individual.",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "email",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "Email address of the individual.",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "age",
-                  "type" : "long",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "Age of the individual in years.",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "city",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "City where the individual resides.",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                } ]
-              },
-              "isStreaming" : false
-            } ],
-            "outputs" : [ {
-              "id" : "fYyd42v1wn1A3-BeWhkr2$$2Mb6uvi_gMyfdln7LuYKZ",
-              "slug" : "out0",
-              "schema" : {
-                "type" : "struct",
-                "fields" : [ {
-                  "name" : "source_column",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "validation_result",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "validation_logic",
-                  "type" : "string",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "row_count",
-                  "type" : "long",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "validation_duration_ms",
-                  "type" : "long",
-                  "nullable" : true,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                } ]
-              },
-              "isStreaming" : false
-            } ],
-            "selectedInputFields" : [ ],
-            "isCustomOutputSchema" : true,
-            "autoUpdateOnRun" : false
-          },
-          "properties" : {
-            "script" : "from pyspark.sql.types import StructType, StructField, StringType, LongType\nfrom pyspark.sql.functions import expr\nimport time\n\nsource_df = in0\nresults = []\nrow_count = source_df.count()\n\nfor validation in Config.validations:\n    source_column = validation.col\n    logic = validation.logic\n    validation_start_time = time.time()\n\n    try:\n        result_df = source_df.select(expr(logic).alias('validation_result'))\n        result_value = result_df.collect()[0]['validation_result']\n        result_str = str(result_value) if result_value is not None else \"NULL\"\n    except Exception as e:\n        result_str = f'ERROR: {str(e)}'\n    finally:\n        validation_end_time = time.time()\n        validation_duration_ms = int((validation_end_time - validation_start_time) * 1000)\n\n    results.append({\n        'source_column': source_column,\n        'validation_result': result_str,\n        'validation_logic': logic,\n        'row_count': row_count,\n        'validation_duration_ms': validation_duration_ms\n    })\n\n# Minimal schema - just dynamic columns\nsimple_schema = StructType([\n    StructField('source_column', StringType()),\n    StructField('validation_result', StringType()),\n    StructField('validation_logic', StringType()),\n    StructField('row_count', LongType()),\n    StructField('validation_duration_ms', LongType())\n])\n\nout0 = spark.createDataFrame(results, schema=simple_schema)",
-            "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
-            "scriptMethodFooter" : "    return out0"
-          }
-        },
-        "BohmaOGBARdNVjilje4OI$$VpeczLAbsrcVjJBxR7i9B" : {
-          "id" : "BohmaOGBARdNVjilje4OI$$VpeczLAbsrcVjJBxR7i9B",
+        "Ettqs0pwjrkGipv-_ppw4$$ZTf0Y_Ho16nA41cJMWDaq" : {
+          "id" : "Ettqs0pwjrkGipv-_ppw4$$ZTf0Y_Ho16nA41cJMWDaq",
           "component" : "Reformat",
           "metadata" : {
-            "label" : "generateFinalSchema",
-            "slug" : "generateFinalSchema",
-            "x" : 420,
-            "y" : 20,
+            "label" : "generateFinalSchema_1",
+            "slug" : "generateFinalSchema_1",
+            "x" : 200,
+            "y" : -120,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
             "isImported" : false,
-            "comment" : "Creates a summary report for data validation activities, including key identifiers, results, and timing information.",
+            "comment" : "Creates a summary report for data validation activities, including details such as validation run, source information, results, and processing time.",
             "autoUpdateComment" : true,
-            "dataPreview" : false,
+            "dataPreview" : true,
             "showRecordsCount" : false
           },
           "ports" : {
             "inputs" : [ {
-              "id" : "xfiyy2G7k0vP7aIxi-GD6$$hVoi5RMFoFx33DCHB-_aF",
+              "id" : "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA",
               "slug" : "in0",
               "schema" : {
                 "type" : "struct",
                 "fields" : [ {
-                  "name" : "source_column",
+                  "name" : "source_columns",
                   "type" : "string",
                   "nullable" : true,
                   "metadata" : {
@@ -1507,7 +776,7 @@
               "isStreaming" : false
             } ],
             "outputs" : [ {
-              "id" : "9AkFYsJTDAy4OZilVGdlY$$UUdwP7HTwndOKqa7u7_Ig",
+              "id" : "xYFO1b2xu9oEyvL4b-QUl$$PLsPpwBgAg7JBIiGMTbyS",
               "slug" : "out",
               "schema" : {
                 "type" : "struct",
@@ -1557,7 +826,7 @@
                     "tags" : [ ]
                   }
                 }, {
-                  "name" : "source_column",
+                  "name" : "source_columns",
                   "type" : "string",
                   "nullable" : true,
                   "metadata" : {
@@ -1647,10 +916,10 @@
               },
               "description" : ""
             }, {
-              "target" : "source_column",
+              "target" : "source_columns",
               "expression" : {
                 "format" : "sql",
-                "expression" : "source_column"
+                "expression" : "source_columns"
               },
               "description" : ""
             }, {
@@ -1684,32 +953,61 @@
             } ],
             "importString" : "",
             "activeTab" : "expressions",
-            "columnsSelector" : [ ]
+            "columnsSelector" : [ "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA##validation_duration_ms", "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA##validation_result", "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA##validation_logic", "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA##source_columns", "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA##row_count" ]
           },
           "componentInfo" : {
             "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.53&projectSubscriptionProjectId=12654&path=gems/Reformat",
             "projectName" : "ProphecySparkBasicsPython"
           }
         },
-        "u8pF0J8KYTyvGYGEuHBhL$$1r2ctV6w9vUL5lPg3_Uqa" : {
-          "id" : "u8pF0J8KYTyvGYGEuHBhL$$1r2ctV6w9vUL5lPg3_Uqa",
-          "component" : "ControlFlowOutput",
+        "K4ezNkiVa8dckEjYdXh3S$$UOOVRg7wKPDpRP9guVTHe" : {
+          "id" : "K4ezNkiVa8dckEjYdXh3S$$UOOVRg7wKPDpRP9guVTHe",
+          "component" : "Source",
           "metadata" : {
-            "label" : "TableIterator_Output",
-            "slug" : "TableIterator_Output",
-            "x" : 980,
-            "y" : 20,
+            "label" : "sourceTable_1",
+            "slug" : "sourceTable_1",
+            "x" : -400,
+            "y" : -120,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
             "isImported" : false,
+            "comment" : "Retrieves business data from a specified source table for further analysis or reporting.",
             "autoUpdateComment" : true,
+            "dataPreview" : true
+          },
+          "ports" : {
+            "inputs" : [ ],
+            "outputs" : [ {
+              "id" : "jVZepK5wCfW7Rlu3Znh5j$$I-8Sdu2TkO-Tvws1xBc4O",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "datasetId" : "datasets/validation_source"
+          }
+        },
+        "xfrZM74S3evVJJPkFPBq3$$EyMYyLtOO9t4pDxM3taRf" : {
+          "id" : "xfrZM74S3evVJJPkFPBq3$$EyMYyLtOO9t4pDxM3taRf",
+          "component" : "ControlFlowOutput",
+          "metadata" : {
+            "label" : "TableIterator_Output",
+            "slug" : "TableIterator_Output",
+            "x" : 600,
+            "y" : -40,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false,
             "dataPreview" : false,
             "showRecordsCount" : false
           },
           "ports" : {
             "inputs" : [ {
-              "id" : "8BVkfx2xa1NPsfznyF3al$$s9nt1Eh5UQuVAEtZEyS6e",
+              "id" : "3qUKVk1iEiy4jdP8HnkIh$$jSEh0uJnADnUooK3of9vW",
               "slug" : "in0",
               "schema" : {
                 "type" : "struct",
@@ -1759,7 +1057,7 @@
                     "tags" : [ ]
                   }
                 }, {
-                  "name" : "source_column",
+                  "name" : "source_columns",
                   "type" : "string",
                   "nullable" : true,
                   "metadata" : {
@@ -1808,57 +1106,60 @@
               "isStreaming" : false
             } ],
             "outputs" : [ {
-              "id" : "yOFuzTQnkDVtR0ydCVRoD$$eUbhgRl7hzMxW50b35mhP",
+              "id" : "wmXxKAvm8h6BhnKxdXvs1$$kOzKuF7w2QX2gUjqxLTYh",
+              "slug" : "out0"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "minNumberOfInPorts" : 0,
+            "allowOutportAddDelete" : true,
+            "description" : "",
+            "allowInportAddDelete" : true,
+            "minNumberOfOutPorts" : 0,
+            "allowOutportRename" : true,
+            "allowInportRename" : true
+          },
+          "componentInfo" : {
+            "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.53&projectSubscriptionProjectId=12654&path=gems/ControlFlowOutput",
+            "projectName" : "ProphecySparkBasicsPython"
+          }
+        },
+        "7LnCuxjGXtjiVzycTX69f$$hopzjF15tpolCX6UqZBuL" : {
+          "id" : "7LnCuxjGXtjiVzycTX69f$$hopzjF15tpolCX6UqZBuL",
+          "component" : "Script",
+          "metadata" : {
+            "label" : "expandValidationRules_1",
+            "slug" : "expandValidationRules_1",
+            "x" : 0,
+            "y" : -120,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false,
+            "comment" : "Evaluates business rules on data, providing detailed results and performance metrics for each rule to support data quality and compliance monitoring.",
+            "autoUpdateComment" : true,
+            "dataPreview" : true
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "OAvjEvgmuvwQ4EhZ0Ntn_$$Dd0T5olczRwy4hAklkJ3c",
+              "slug" : "in0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ ]
+              },
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "IWjEEXA__KcbxC9vQJYI6$$It4AxQ11DNcs8UWvItCvV",
               "slug" : "out0",
               "schema" : {
                 "type" : "struct",
                 "fields" : [ {
-                  "name" : "validation_run_id",
-                  "type" : "string",
-                  "nullable" : false,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "validation_timestamp",
-                  "type" : "timestamp",
-                  "nullable" : false,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "source_catalog",
-                  "type" : "string",
-                  "nullable" : false,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "source_schema",
-                  "type" : "string",
-                  "nullable" : false,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "source_table",
-                  "type" : "string",
-                  "nullable" : false,
-                  "metadata" : {
-                    "description" : "",
-                    "mappings" : [ ],
-                    "tags" : [ ]
-                  }
-                }, {
-                  "name" : "source_column",
+                  "name" : "source_columns",
                   "type" : "string",
                   "nullable" : true,
                   "metadata" : {
@@ -1908,10 +1209,131 @@
             } ],
             "selectedInputFields" : [ ],
             "isCustomOutputSchema" : true,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "script" : "from pyspark.sql.types import StructType, StructField, StringType, LongType, ArrayType\nfrom pyspark.sql.functions import expr\nimport time\n\nsource_df = in0\nresults = []\nrow_count = source_df.count()\n\nfor validation in Config.validations:\n    source_columns = validation.cols\n    logic = validation.logic\n    validation_start_time = time.time()\n\n    try:\n        # Execute the validation logic\n        result_df = source_df.select(expr(logic).alias('validation_result'))\n        result_value = result_df.collect()[0]['validation_result']\n        result_str = str(result_value) if result_value is not None else \"NULL\"\n    except Exception as e:\n        result_str = f'ERROR: {str(e)}'\n    finally:\n        validation_end_time = time.time()\n        validation_duration_ms = int((validation_end_time - validation_start_time) * 1000)\n\n    results.append({\n        'source_columns': source_columns,\n        'validation_result': result_str,\n        'validation_logic': logic,\n        'row_count': row_count,\n        'validation_duration_ms': validation_duration_ms\n    })\n\n# Output schema\nsimple_schema = StructType([\n    StructField('source_columns', ArrayType(StringType())),\n    StructField('validation_result', StringType()),\n    StructField('validation_logic', StringType()),\n    StructField('row_count', LongType()),\n    StructField('validation_duration_ms', LongType())\n])\n\nout0 = spark.createDataFrame(results, schema=simple_schema)",
+            "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
+            "scriptMethodFooter" : "    return out0"
+          }
+        },
+        "BN-yoBhdGOazyOQv0cHEt$$nURrJ0rVuXs4qJdwTLfb7" : {
+          "id" : "BN-yoBhdGOazyOQv0cHEt$$nURrJ0rVuXs4qJdwTLfb7",
+          "component" : "Script",
+          "metadata" : {
+            "label" : "select_configured_columns_1",
+            "slug" : "select_configured_columns_1",
+            "x" : -240,
+            "y" : -120,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false,
+            "comment" : "Selects only the business-relevant columns from the data, based on configurable requirements.",
+            "autoUpdateComment" : true
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "TDiy7J1OuClXPGrFUrgB4$$7wTJyQzGnDHK4dAOx_POO",
+              "slug" : "in0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "id",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Unique identifier for each individual in the dataset.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "name",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Full name of the individual.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "email",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Email address of the individual.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "age",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "Age of the individual in years.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "city",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "City where the individual resides.",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "isStreaming" : false
+            } ],
+            "outputs" : [ {
+              "id" : "SI3jrBWtbmFBbyeTF56_V$$PyBxwqslxWNS-e4Wo9Bfj",
+              "slug" : "out0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ ]
+              },
+              "isStreaming" : false
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : true,
             "autoUpdateOnRun" : true
           },
           "properties" : {
-            "minNumberOfInPorts" : 0,
+            "script" : "from pyspark.sql.functions import col\n\nsource_columns = Config.source_columns if hasattr(Config, 'source_columns') else None\n\nif not source_columns or len(source_columns) == 0:\n    return in0\n\nactual_columns = set(in0.columns)\ncolumns_to_select = [c for c in source_columns if c in actual_columns]\n\nif not columns_to_select:\n    return in0\n\nout0 = in0.select(*[col(c) for c in columns_to_select])",
+            "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
+            "scriptMethodFooter" : "    return out0"
+          }
+        },
+        "bpk1DJSP3PUvP8PiKja7P$$NXDMUxeW30xqGqkVY79O4" : {
+          "id" : "bpk1DJSP3PUvP8PiKja7P$$NXDMUxeW30xqGqkVY79O4",
+          "component" : "ControlFlowInput",
+          "metadata" : {
+            "label" : "TableIterator_Input",
+            "slug" : "TableIterator_Input",
+            "x" : 0,
+            "y" : 0,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false,
+            "visualProperty" : {
+              "isHidden" : true
+            }
+          },
+          "ports" : {
+            "inputs" : [ {
+              "id" : "MfiQbaLjwjpio5iVM5GIQ$$_SwbpyTn1JnOWrAdQHE9q",
+              "slug" : "in0"
+            } ],
+            "outputs" : [ ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "minNumberOfInPorts" : 1,
             "allowOutportAddDelete" : true,
             "description" : "",
             "allowInportAddDelete" : true,
@@ -1920,13 +1342,332 @@
             "allowInportRename" : true
           },
           "componentInfo" : {
-            "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.53&projectSubscriptionProjectId=12654&path=gems/ControlFlowOutput",
+            "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.53&projectSubscriptionProjectId=12654&path=gems/ControlFlowInput",
             "projectName" : "ProphecySparkBasicsPython"
           }
         }
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.53&projectSubscriptionProjectId=12654&path=gems/TableIterator",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ" : {
+      "id" : "TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "extract_required_columns",
+        "slug" : "extract_required_columns",
+        "x" : 620,
+        "y" : 20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Extracts key information about data sources and identifies all unique columns required for validation processes.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false,
+        "showRecordsCount" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "5EESIXcT15_Ye6ss7fBLH$$rGPe4ZIW1aFYIpowkYzig",
+          "slug" : "out",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "source_catalog",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_schema",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_table",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "table_key",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_run_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_columns",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validations",
+              "type" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "struct",
+                  "fields" : [ {
+                    "name" : "cols",
+                    "type" : {
+                      "type" : "array",
+                      "elementType" : "string",
+                      "containsNull" : true
+                    },
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "logic",
+                    "type" : "string",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  } ]
+                },
+                "containsNull" : false
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          }
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : true
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "source_catalog",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "source_catalog"
+          },
+          "description" : ""
+        }, {
+          "target" : "source_schema",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "source_schema"
+          },
+          "description" : ""
+        }, {
+          "target" : "source_table",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "source_table"
+          },
+          "description" : ""
+        }, {
+          "target" : "table_key",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "table_key"
+          },
+          "description" : ""
+        }, {
+          "target" : "validation_run_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "validation_run_id"
+          },
+          "description" : ""
+        }, {
+          "target" : "validation_timestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "validation_timestamp"
+          },
+          "description" : ""
+        }, {
+          "target" : "source_columns",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ARRAY_DISTINCT(\n    FLATTEN(\n      TRANSFORM(\n        validations,\n        v -> v['cols']\n      )\n    )\n  )"
+          },
+          "description" : ""
+        }, {
+          "target" : "validations",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "validations"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.53&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "RlV-DQk1VxayJI5EIvY2j$$U4bHBv6FKXUaYNKG7jcoJ" : {
+      "id" : "RlV-DQk1VxayJI5EIvY2j$$U4bHBv6FKXUaYNKG7jcoJ",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "groupByTable",
+        "slug" : "groupByTable",
+        "x" : 420,
+        "y" : 20,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Summarizes validation activities for each data table, providing the latest validation details and associated rules.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false,
+        "showRecordsCount" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "-FRKVOoiSy8cz9kA9y9Hp$$fB411Q7ar-7DYP5hOvPtr",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "allIns" : false,
+        "doPivot" : false,
+        "aggregate" : [ {
+          "target" : "validation_run_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "max(validation_run_id)"
+          },
+          "description" : "",
+          "_row_id" : "FaDD08xeT4"
+        }, {
+          "target" : "validation_timestamp",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "max(validation_timestamp)"
+          },
+          "description" : "",
+          "_row_id" : "jqauTupl7U"
+        }, {
+          "target" : "source_columns",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "COLLECT_LIST(source_columns)"
+          },
+          "description" : "",
+          "_row_id" : "8knmcesZr7"
+        }, {
+          "target" : "validations",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "collect_list(struct(source_columns AS cols, logic AS logic))"
+          },
+          "description" : "",
+          "_row_id" : "RfPkkhp94s"
+        } ],
+        "allowSelection" : true,
+        "pivotColumn" : null,
+        "pivotValues" : [ ],
+        "importString" : "",
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ ],
+        "groupBy" : [ {
+          "target" : "source_catalog",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "source_catalog"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "source_schema",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "source_schema"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "source_table",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "source_table"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "table_key",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "table_key"
+          },
+          "description" : "",
+          "_row_id" : null
+        } ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.53&projectSubscriptionProjectId=12654&path=gems/Aggregate",
         "projectName" : "ProphecySparkBasicsPython"
       }
     },
@@ -1966,5 +1707,379 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  }
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.wSlTUTPO60oNFaD7JJJXm$$WSLmWTv7qDxMYx5AACMRf.properties.expressions[3].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "No match found for column source_columns",
+    "tags" : [ ],
+    "relatedInformation" : [ ],
+    "diagnosticFix" : {
+      "fixType" : "CopilotDiagnosticFix",
+      "copilotFixType" : "expression"
+    }
+  }, {
+    "property" : "$.workflow.processes.RlV-DQk1VxayJI5EIvY2j$$U4bHBv6FKXUaYNKG7jcoJ",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[0].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "No match found for column source_catalog",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[1].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "No match found for column source_schema",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[2].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "No match found for column source_table",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[3].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "No match found for column table_key",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[4].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "No match found for column validation_run_id",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[5].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "No match found for column validation_timestamp",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[6].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "No match found for column validations",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[7].expression.expression",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "No match found for column validations",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Gems inside the subgraph are broken",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.processes.BN-yoBhdGOazyOQv0cHEt$$nURrJ0rVuXs4qJdwTLfb7.ports.outputs",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 3,
+    "message" : "Please infer output schema from the cluster as described [here](https://docs.prophecy.io/low-code-spark/gems/custom/script/)",
+    "tags" : [ ],
+    "relatedInformation" : [ ],
+    "diagnosticType" : 2
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.processes.bpk1DJSP3PUvP8PiKja7P$$NXDMUxeW30xqGqkVY79O4",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[0].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: source_catalog maps to Config Field with name: source_catalog but column Name with name: source_catalog not found.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[1].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: source_schema maps to Config Field with name: source_schema but column Name with name: source_schema not found.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[2].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: source_table maps to Config Field with name: source_table but column Name with name: source_table not found.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[3].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: table_key maps to Config Field with name: table_key but column Name with name: table_key not found.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[4].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: validation_run_id maps to Config Field with name: validation_run_id but column Name with name: validation_run_id not found.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[5].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: validation_timestamp maps to Config Field with name: validation_timestamp but column Name with name: validation_timestamp not found.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[6].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: source_columns maps to Config Field with name: source_columns but column Name with name: source_columns not found.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[7].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: validations maps to Config Field with name: validations but column Name with name: validations not found.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.x7D8myrujXWbt_c0QDC7K$$r-XuZoR1zMB2mqRbOSsJJ",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  } ]
 }

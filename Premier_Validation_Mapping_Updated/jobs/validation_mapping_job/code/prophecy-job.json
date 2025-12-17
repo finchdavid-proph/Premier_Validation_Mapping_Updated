@@ -77,7 +77,7 @@
           "selectedProjectInstance" : "default",
           "projectInstances" : [ "default" ],
           "instances" : {
-            "Premier_Updated_Validation_Mapping" : [ "default" ]
+            "Premier_Validation_Mapping_Updated" : [ "default" ]
           },
           "overrides" : { },
           "schema" : [ {
@@ -106,7 +106,7 @@
             "optional" : false,
             "kind" : {
               "type" : "string",
-              "value" : "validation_rules"
+              "value" : "validation_rules_update"
             },
             "isReferenced" : false,
             "isWorkflowNodeConfiguration" : false
@@ -141,7 +141,7 @@
             "isReferenced" : false,
             "isWorkflowNodeConfiguration" : false
           }, {
-            "name" : "validateTablesIterator",
+            "name" : "TableIterator_1",
             "optional" : false,
             "kind" : {
               "type" : "record",
@@ -171,7 +171,7 @@
                 "optional" : false,
                 "kind" : {
                   "type" : "string",
-                  "value" : "validation_rules"
+                  "value" : "validation_rules_update"
                 },
                 "isReferenced" : false,
                 "isWorkflowNodeConfiguration" : false
@@ -260,6 +260,19 @@
                 "isReferenced" : false,
                 "isWorkflowNodeConfiguration" : false
               }, {
+                "name" : "required_columns",
+                "optional" : false,
+                "kind" : {
+                  "type" : "array",
+                  "elementType" : {
+                    "type" : "string",
+                    "value" : null
+                  },
+                  "value" : [ ]
+                },
+                "isReferenced" : false,
+                "isWorkflowNodeConfiguration" : false
+              }, {
                 "name" : "validations",
                 "optional" : false,
                 "kind" : {
@@ -267,10 +280,14 @@
                   "elementType" : {
                     "type" : "record",
                     "fields" : [ {
-                      "name" : "col",
+                      "name" : "cols",
                       "optional" : false,
                       "kind" : {
-                        "type" : "string",
+                        "type" : "array",
+                        "elementType" : {
+                          "type" : "string",
+                          "value" : null
+                        },
                         "value" : null
                       },
                       "isReferenced" : false,
@@ -296,7 +313,7 @@
             "isWorkflowNodeConfiguration" : true
           } ]
         },
-        "projectId" : "106429"
+        "projectId" : "108247"
       },
       "conditional" : {
         "runIf" : "ALL_SUCCESS",

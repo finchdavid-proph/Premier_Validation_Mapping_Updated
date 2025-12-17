@@ -2,9 +2,9 @@ from prophecy.config import ConfigBase
 
 
 class Validations(ConfigBase):
-    def __init__(self, prophecy_spark=None, col: str=None, logic: str=None, prophecy_project_config=None, **kwargs):
+    def __init__(self, prophecy_spark=None, cols: list=None, logic: str=None, prophecy_project_config=None, **kwargs):
         self.update_and_add_project_config(prophecy_spark, prophecy_project_config, kwargs)
-        self.col = col
+        self.cols = cols
         self.logic = logic
         pass
 
@@ -20,6 +20,7 @@ class SubgraphConfig(ConfigBase):
             table_key: str="",
             validation_run_id: str="",
             validation_timestamp: str="01-01-1970T00:00:00",
+            source_columns: list=[],
             validations: list=None,
             prophecy_project_config=None,
             **kwargs
@@ -31,6 +32,7 @@ class SubgraphConfig(ConfigBase):
         self.table_key = table_key
         self.validation_run_id = validation_run_id
         self.validation_timestamp = self.get_timestamp_value(validation_timestamp)
+        self.source_columns = source_columns
         self.validations = self.get_config_object(prophecy_spark, [], validations, Validations)
         pass
 
@@ -41,6 +43,7 @@ class SubgraphConfig(ConfigBase):
         self.table_key = updated_config.table_key
         self.validation_run_id = updated_config.validation_run_id
         self.validation_timestamp = updated_config.validation_timestamp
+        self.source_columns = updated_config.source_columns
         self.validations = updated_config.validations
         self.update_project_config_fields(updated_config)
         pass

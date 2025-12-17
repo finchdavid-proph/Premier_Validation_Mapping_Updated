@@ -10,8 +10,9 @@ def pipeline(spark: SparkSession) -> None:
     df_validationRules = validationRules(spark)
     df_addMetadata = addMetadata(spark, df_validationRules)
     df_groupByTable = groupByTable(spark, df_addMetadata)
-    df_validateTablesIterator = validateTablesIterator(Config.validateTablesIterator).apply(spark, df_groupByTable)
-    validationOutput(spark, df_validateTablesIterator)
+    df_extract_required_columns = extract_required_columns(spark, df_groupByTable)
+    df_TableIterator_2 = TableIterator_2(Config.TableIterator_2).apply(spark, df_extract_required_columns)
+    validationOutput(spark, df_TableIterator_2)
 
 def main():
     spark = SparkSession.builder.enableHiveSupport().appName("validation_mapping").getOrCreate()

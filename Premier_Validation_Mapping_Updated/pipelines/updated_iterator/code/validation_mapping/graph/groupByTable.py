@@ -12,5 +12,6 @@ def groupByTable(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return df1.agg(
         max(col("validation_run_id")).alias("validation_run_id"), 
         max(col("validation_timestamp")).alias("validation_timestamp"), 
-        collect_list(struct(col("source_column").alias("col"), col("logic"))).alias("validations")
+        collect_list(col("source_columns")).alias("source_columns"), 
+        collect_list(struct(col("source_columns").alias("cols"), col("logic"))).alias("validations")
     )

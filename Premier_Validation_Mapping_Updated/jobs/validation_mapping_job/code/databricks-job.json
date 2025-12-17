@@ -34,7 +34,7 @@
           "spark.prophecy.tasks" : "H4sIAAAAAAAAAKtWCsgsSM3JzEuNN1CyUiqAcor1SwtSEktSU+IzS1KLEkvyi5RqAXtuGEUrAAAA",
           "spark.prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
           "spark.prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
-          "spark.prophecy.execution.metrics.disabled" : "true",
+          "spark.prophecy.execution.metrics.disabled" : "false",
           "spark.prophecy.execution.service.url" : "wss://app.prophecy.io/execution/eventws",
           "spark.databricks.isv.product" : "prophecy"
         },
@@ -71,7 +71,7 @@
           "spark.prophecy.tasks" : "H4sIAAAAAAAAAKtWCsgsSM3JzEuNN1CyUiqAcor1SwtSEktSU+IzS1KLEkvyi5RqAXtuGEUrAAAA",
           "spark.prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
           "spark.prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
-          "spark.prophecy.execution.metrics.disabled" : "true",
+          "spark.prophecy.execution.metrics.disabled" : "false",
           "spark.prophecy.execution.service.url" : "wss://app.prophecy.io/execution/eventws",
           "spark.databricks.isv.product" : "prophecy"
         },
@@ -117,7 +117,7 @@
   "cluster_mode" : {
     "clusterMode" : "Single"
   },
-  "secret_scope" : "prophecy_jobs_14261",
+  "secret_scope" : "prophecy_jobs_14711",
   "sorted_processes" : [ "n6I_q-wMIW71snEdN_T7-$$PSbvrA9Vte66lCWOZn23J" ],
   "is_prophecy_managed_fabric" : false
 }

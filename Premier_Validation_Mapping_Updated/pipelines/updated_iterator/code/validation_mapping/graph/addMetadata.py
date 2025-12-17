@@ -11,7 +11,7 @@ def addMetadata(spark: SparkSession, in0: DataFrame) -> DataFrame:
         col("source_catalog"), 
         col("source_schema"), 
         col("source_table"), 
-        col("source_column"), 
+        col("source_columns"), 
         col("logic"), 
         concat(col("source_catalog"), lit("."), col("source_schema"), lit("."), col("source_table")).alias("table_key"), 
         concat(lit("validation_run_"), unix_timestamp(current_timestamp()).cast(StringType()))\
