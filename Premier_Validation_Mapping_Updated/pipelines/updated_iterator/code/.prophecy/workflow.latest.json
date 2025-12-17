@@ -348,7 +348,7 @@
           "default" : {
             "validationRulesCatalog" : "dfinch",
             "validationRulesSchema" : "premier_val_map",
-            "validationRulesTable" : "validation_rules_update",
+            "validationRulesTable" : "validation_rules",
             "validationOutputCatalog" : "dfinch",
             "validationOutputSchema" : "premier_val_map",
             "validationOutputTable" : "validation_output"
@@ -1922,6 +1922,22 @@
     "relatedInformation" : [ ],
     "diagnosticType" : 2
   }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.processes.xfrZM74S3evVJJPkFPBq3$$EyMYyLtOO9t4pDxM3taRf",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Input port Schema for MetaComponent not found port: in0. Please fix it.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
     "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.processes.bpk1DJSP3PUvP8PiKja7P$$NXDMUxeW30xqGqkVY79O4",
     "range" : {
       "start" : {
@@ -1935,134 +1951,6 @@
     },
     "severity" : 1,
     "message" : "One of the upstream gems is broken. Please, fix it first.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[0].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: source_catalog maps to Config Field with name: source_catalog but column Name with name: source_catalog not found.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[1].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: source_schema maps to Config Field with name: source_schema but column Name with name: source_schema not found.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[2].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: source_table maps to Config Field with name: source_table but column Name with name: source_table not found.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[3].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: table_key maps to Config Field with name: table_key but column Name with name: table_key not found.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[4].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: validation_run_id maps to Config Field with name: validation_run_id but column Name with name: validation_run_id not found.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[5].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: validation_timestamp maps to Config Field with name: validation_timestamp but column Name with name: validation_timestamp not found.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[6].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: source_columns maps to Config Field with name: source_columns but column Name with name: source_columns not found.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[7].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: validations maps to Config Field with name: validations but column Name with name: validations not found.",
     "tags" : [ ],
     "relatedInformation" : [ ]
   }, {
