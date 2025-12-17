@@ -1003,7 +1003,7 @@
           "metadata" : {
             "label" : "source_table",
             "slug" : "source_table",
-            "x" : 0,
+            "x" : 20,
             "y" : 20,
             "phase" : 0,
             "cache" : false,
