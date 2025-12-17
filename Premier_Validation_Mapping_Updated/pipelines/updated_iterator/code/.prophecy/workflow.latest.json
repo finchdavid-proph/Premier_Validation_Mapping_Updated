@@ -438,7 +438,106 @@
       "ports" : {
         "inputs" : [ {
           "id" : "Zsv3bdg6hhSc4AfiI8njG$$PTwMMJJ6FCxKQMrVzwcBn",
-          "slug" : "in0"
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "validation_run_id",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_timestamp",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_catalog",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_schema",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_table",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_columns",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_result",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_logic",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "row_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_duration_ms",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
@@ -477,7 +576,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "Name of the data catalog where the source data is stored.",
+                "description" : "",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -486,7 +585,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "Schema name within the catalog that organizes the source data.",
+                "description" : "",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -495,16 +594,20 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "Table name in the source schema from which data is retrieved.",
+                "description" : "",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
             }, {
-              "name" : "source_column",
-              "type" : "string",
+              "name" : "source_columns",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
               "nullable" : true,
               "metadata" : {
-                "description" : "List of column names from the source table being referenced.",
+                "description" : "",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -513,7 +616,7 @@
               "type" : "string",
               "nullable" : true,
               "metadata" : {
-                "description" : "Business rule or condition applied to the source data.",
+                "description" : "",
                 "mappings" : [ ],
                 "tags" : [ ]
               }
@@ -523,11 +626,92 @@
         } ],
         "outputs" : [ {
           "id" : "wXjLJtWZSAwpZBZgWqzXX$$8p_B6w6fCWZ0qg23r-PGO",
-          "slug" : "out"
+          "slug" : "out",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "source_catalog",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_schema",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_table",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_columns",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "logic",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "table_key",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_run_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_timestamp",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : true
       },
       "properties" : {
         "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
@@ -590,7 +774,7 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##source_catalog", "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##logic", "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##source_schema", "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##source_table" ]
+        "columnsSelector" : [ "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##source_catalog", "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##source_table", "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##source_columns", "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##source_schema", "IKtnuFd2cW-LDU5wz3RNg$$2nIonzygl8LNhEqYp_vHC##logic" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.53&projectSubscriptionProjectId=12654&path=gems/Reformat",
@@ -615,7 +799,117 @@
       "ports" : {
         "inputs" : [ {
           "id" : "eKJMaflTy8bI4BimOuUPA$$dTDnaY0dkbw3AWo4pB1rv",
-          "slug" : "in0"
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "source_catalog",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_schema",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_table",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "table_key",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_run_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_columns",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validations",
+              "type" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "struct",
+                  "fields" : [ {
+                    "name" : "cols",
+                    "type" : {
+                      "type" : "array",
+                      "elementType" : "string",
+                      "containsNull" : true
+                    },
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "logic",
+                    "type" : "string",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  } ]
+                },
+                "containsNull" : false
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "YOXcpQQVxYkGL6DkpJCR0$$ZDC-eMzgRMJwDOusMnGC1",
@@ -627,7 +921,7 @@
       },
       "properties" : {
         "metagemProperty" : {
-          "availableColumnNames" : [ ],
+          "availableColumnNames" : [ "source_catalog", "source_schema", "source_table", "table_key", "validation_run_id", "validation_timestamp", "source_columns", "validations" ],
           "availableConfigFieldNames" : [ "validationRulesCatalog", "validationRulesSchema", "validationRulesTable", "validationOutputCatalog", "validationOutputSchema", "validationOutputTable", "source_catalog", "source_schema", "source_table", "table_key", "validation_run_id", "validation_timestamp", "source_columns", "validations" ],
           "numberOfThreads" : "5",
           "maxIteration" : "1000",
@@ -744,7 +1038,7 @@
             "cache" : false,
             "detailedStats" : false,
             "isImported" : false,
-            "comment" : "Creates a summary report for data validation activities, including details such as validation run, source information, results, and processing time.",
+            "comment" : "Creates a summary report of data validation activities, including details such as validation time, source, results, and processing duration.",
             "autoUpdateComment" : true,
             "dataPreview" : true,
             "showRecordsCount" : false
@@ -856,7 +1150,11 @@
                   }
                 }, {
                   "name" : "source_columns",
-                  "type" : "string",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "string",
+                    "containsNull" : true
+                  },
                   "nullable" : true,
                   "metadata" : {
                     "description" : "",
@@ -1057,7 +1355,11 @@
                   }
                 }, {
                   "name" : "source_columns",
-                  "type" : "string",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "string",
+                    "containsNull" : true
+                  },
                   "nullable" : true,
                   "metadata" : {
                     "description" : "",
@@ -1148,7 +1450,43 @@
               "slug" : "in0",
               "schema" : {
                 "type" : "struct",
-                "fields" : [ ]
+                "fields" : [ {
+                  "name" : "id",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "name",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "age",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "email",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
               },
               "isStreaming" : false
             } ],
@@ -1291,7 +1629,43 @@
               "slug" : "out0",
               "schema" : {
                 "type" : "struct",
-                "fields" : [ ]
+                "fields" : [ {
+                  "name" : "id",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "name",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "age",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "email",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
               },
               "isStreaming" : false
             } ],
@@ -1324,7 +1698,117 @@
           "ports" : {
             "inputs" : [ {
               "id" : "MfiQbaLjwjpio5iVM5GIQ$$_SwbpyTn1JnOWrAdQHE9q",
-              "slug" : "in0"
+              "slug" : "in0",
+              "schema" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "source_catalog",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "source_schema",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "source_table",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "table_key",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "validation_run_id",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "validation_timestamp",
+                  "type" : "timestamp",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "source_columns",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : "string",
+                    "containsNull" : true
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "validations",
+                  "type" : {
+                    "type" : "array",
+                    "elementType" : {
+                      "type" : "struct",
+                      "fields" : [ {
+                        "name" : "cols",
+                        "type" : {
+                          "type" : "array",
+                          "elementType" : "string",
+                          "containsNull" : true
+                        },
+                        "nullable" : true,
+                        "metadata" : {
+                          "description" : "",
+                          "mappings" : [ ],
+                          "tags" : [ ]
+                        }
+                      }, {
+                        "name" : "logic",
+                        "type" : "string",
+                        "nullable" : true,
+                        "metadata" : {
+                          "description" : "",
+                          "mappings" : [ ],
+                          "tags" : [ ]
+                        }
+                      } ]
+                    },
+                    "containsNull" : false
+                  },
+                  "nullable" : false,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "isStreaming" : false
             } ],
             "outputs" : [ ],
             "selectedInputFields" : [ ],
@@ -1363,7 +1847,7 @@
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Extracts key information about data sources and identifies all unique columns required for validation processes.",
+        "comment" : "Extracts essential information about data sources and validation details, including unique columns involved in the validation process.",
         "autoUpdateComment" : true,
         "dataPreview" : false,
         "showRecordsCount" : false
@@ -1371,7 +1855,121 @@
       "ports" : {
         "inputs" : [ {
           "id" : "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6",
-          "slug" : "in0"
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "source_catalog",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_schema",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_table",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "table_key",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_run_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_columns",
+              "type" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "array",
+                  "elementType" : "string",
+                  "containsNull" : true
+                },
+                "containsNull" : false
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validations",
+              "type" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "struct",
+                  "fields" : [ {
+                    "name" : "cols",
+                    "type" : {
+                      "type" : "array",
+                      "elementType" : "string",
+                      "containsNull" : true
+                    },
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "logic",
+                    "type" : "string",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  } ]
+                },
+                "containsNull" : false
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "5EESIXcT15_Ye6ss7fBLH$$rGPe4ZIW1aFYIpowkYzig",
@@ -1484,7 +2082,8 @@
                 "tags" : [ ]
               }
             } ]
-          }
+          },
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : true,
@@ -1551,7 +2150,7 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ ]
+        "columnsSelector" : [ "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##validations", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##source_schema", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##source_catalog", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##table_key", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##source_table", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##validation_timestamp", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##validation_run_id" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.53&projectSubscriptionProjectId=12654&path=gems/Reformat",
@@ -1578,15 +2177,210 @@
       "ports" : {
         "inputs" : [ {
           "id" : "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX",
-          "slug" : "in0"
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "source_catalog",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_schema",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_table",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_columns",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "logic",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "table_key",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_run_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_timestamp",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "-FRKVOoiSy8cz9kA9y9Hp$$fB411Q7ar-7DYP5hOvPtr",
-          "slug" : "out"
+          "slug" : "out",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "source_catalog",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_schema",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_table",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "table_key",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_run_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validation_timestamp",
+              "type" : "timestamp",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "source_columns",
+              "type" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "array",
+                  "elementType" : "string",
+                  "containsNull" : true
+                },
+                "containsNull" : false
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "validations",
+              "type" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "struct",
+                  "fields" : [ {
+                    "name" : "cols",
+                    "type" : {
+                      "type" : "array",
+                      "elementType" : "string",
+                      "containsNull" : true
+                    },
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "logic",
+                    "type" : "string",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  } ]
+                },
+                "containsNull" : false
+              },
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : true
       },
       "properties" : {
         "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
@@ -1630,7 +2424,7 @@
         "pivotValues" : [ ],
         "importString" : "",
         "activeTab" : "aggregate",
-        "columnsSelector" : [ ],
+        "columnsSelector" : [ "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##source_columns", "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##table_key", "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##validation_timestamp", "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##validation_run_id", "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##source_table", "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##logic", "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##source_catalog", "8PuVDD7HNCnl7LQ4hXjz4$$4xa6pSwQ_jR0IzsWOfHoX##source_schema" ],
         "groupBy" : [ {
           "target" : "source_catalog",
           "expression" : {
@@ -1682,7 +2476,7 @@
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Retrieves business validation rules from a central repository for compliance and quality checks.",
+        "comment" : "Retrieves business validation rules from a central repository for use in data quality checks.",
         "autoUpdateComment" : true
       },
       "ports" : {
@@ -1706,379 +2500,5 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.processes.wSlTUTPO60oNFaD7JJJXm$$WSLmWTv7qDxMYx5AACMRf.properties.expressions[3].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "No match found for column source_columns",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticFix" : {
-      "fixType" : "CopilotDiagnosticFix",
-      "copilotFixType" : "expression"
-    }
-  }, {
-    "property" : "$.workflow.processes.RlV-DQk1VxayJI5EIvY2j$$U4bHBv6FKXUaYNKG7jcoJ",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "One of the upstream gems is broken. Please, fix it first.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "One of the upstream gems is broken. Please, fix it first.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[0].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column source_catalog",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[1].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column source_schema",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[2].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column source_table",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[3].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column table_key",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[4].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column validation_run_id",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[5].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column validation_timestamp",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[6].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column validations",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ.properties.expressions[7].expression.expression",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "No match found for column validations",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Gems inside the subgraph are broken",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.processes.BN-yoBhdGOazyOQv0cHEt$$nURrJ0rVuXs4qJdwTLfb7.ports.outputs",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 3,
-    "message" : "Please infer output schema from the cluster as described [here](https://docs.prophecy.io/low-code-spark/gems/custom/script/)",
-    "tags" : [ ],
-    "relatedInformation" : [ ],
-    "diagnosticType" : 2
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.processes.bpk1DJSP3PUvP8PiKja7P$$NXDMUxeW30xqGqkVY79O4",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "One of the upstream gems is broken. Please, fix it first.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[0].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: source_catalog maps to Config Field with name: source_catalog but column Name with name: source_catalog not found.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[1].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: source_schema maps to Config Field with name: source_schema but column Name with name: source_schema not found.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[2].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: source_table maps to Config Field with name: source_table but column Name with name: source_table not found.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[3].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: table_key maps to Config Field with name: table_key but column Name with name: table_key not found.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[4].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: validation_run_id maps to Config Field with name: validation_run_id but column Name with name: validation_run_id not found.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[5].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: validation_timestamp maps to Config Field with name: validation_timestamp but column Name with name: validation_timestamp not found.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[6].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: source_columns maps to Config Field with name: source_columns but column Name with name: source_columns not found.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[7].columnName",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "IteratorSettings error:: Column: validations maps to Config Field with name: validations but column Name with name: validations not found.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.x7D8myrujXWbt_c0QDC7K$$r-XuZoR1zMB2mqRbOSsJJ",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "One of the upstream gems is broken. Please, fix it first.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  } ]
+  }
 }

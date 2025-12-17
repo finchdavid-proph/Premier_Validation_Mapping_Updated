@@ -37,8 +37,11 @@ schema:
       description: ''
       mappings: []
       tags: []
-  - name: source_column
-    type: string
+  - name: source_columns
+    type:
+      type: array
+      elementType: string
+      containsNull: true
     nullable: true
     metadata:
       description: ''
