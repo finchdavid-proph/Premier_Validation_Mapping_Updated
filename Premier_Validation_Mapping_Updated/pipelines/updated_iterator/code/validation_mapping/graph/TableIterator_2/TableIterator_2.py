@@ -15,8 +15,8 @@ class TableIterator_2(MetaGemExec):
 
     def execute(self, spark: SparkSession, subgraph_config: SubgraphConfig) -> List[DataFrame]:
         Config.update(subgraph_config)
-        df_sourceTable_1 = sourceTable_1(spark)
-        df_select_configured_columns_1 = select_configured_columns_1(spark, df_sourceTable_1)
+        df_source_table = source_table(spark)
+        df_select_configured_columns_1 = select_configured_columns_1(spark, df_source_table)
         df_expandValidationRules_1 = expandValidationRules_1(spark, df_select_configured_columns_1)
         df_generateFinalSchema_1 = generateFinalSchema_1(spark, df_expandValidationRules_1)
         subgraph_config.update(Config)

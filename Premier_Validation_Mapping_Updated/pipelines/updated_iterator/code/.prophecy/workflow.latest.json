@@ -675,12 +675,6 @@
         "target" : "Ettqs0pwjrkGipv-_ppw4$$ZTf0Y_Ho16nA41cJMWDaq",
         "targetPort" : "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA"
       }, {
-        "id" : "Boq7j9fy6W7A6zs9wlPDu",
-        "source" : "K4ezNkiVa8dckEjYdXh3S$$UOOVRg7wKPDpRP9guVTHe",
-        "sourcePort" : "jVZepK5wCfW7Rlu3Znh5j$$I-8Sdu2TkO-Tvws1xBc4O",
-        "target" : "BN-yoBhdGOazyOQv0cHEt$$nURrJ0rVuXs4qJdwTLfb7",
-        "targetPort" : "TDiy7J1OuClXPGrFUrgB4$$7wTJyQzGnDHK4dAOx_POO"
-      }, {
         "id" : "UdXkVNIN1Zev2Uoywc232",
         "source" : "BN-yoBhdGOazyOQv0cHEt$$nURrJ0rVuXs4qJdwTLfb7",
         "sourcePort" : "SI3jrBWtbmFBbyeTF56_V$$PyBxwqslxWNS-e4Wo9Bfj",
@@ -701,16 +695,51 @@
         "sourcePort" : "xYFO1b2xu9oEyvL4b-QUl$$PLsPpwBgAg7JBIiGMTbyS",
         "target" : "xfrZM74S3evVJJPkFPBq3$$EyMYyLtOO9t4pDxM3taRf",
         "targetPort" : "3qUKVk1iEiy4jdP8HnkIh$$jSEh0uJnADnUooK3of9vW"
+      }, {
+        "id" : "SfXrUTsXjysTFHjszQXqw$$GvU3AcvmwxeqSfip1Eu5P",
+        "source" : "MSpKAd7DiCdbuSPghsZJB$$FLQgOA9khzRQyadwd9x1t",
+        "sourcePort" : "3lK5VBc-EPC-hyy-oUlcf$$wYQY42Dp3lGsmW4orK9YY",
+        "target" : "BN-yoBhdGOazyOQv0cHEt$$nURrJ0rVuXs4qJdwTLfb7",
+        "targetPort" : "TDiy7J1OuClXPGrFUrgB4$$7wTJyQzGnDHK4dAOx_POO"
       } ],
       "processes" : {
+        "MSpKAd7DiCdbuSPghsZJB$$FLQgOA9khzRQyadwd9x1t" : {
+          "id" : "MSpKAd7DiCdbuSPghsZJB$$FLQgOA9khzRQyadwd9x1t",
+          "component" : "Source",
+          "metadata" : {
+            "label" : "source_table",
+            "slug" : "source_table",
+            "x" : 0,
+            "y" : 20,
+            "phase" : 0,
+            "cache" : false,
+            "detailedStats" : false,
+            "isImported" : false,
+            "comment" : "Retrieves business data from a designated source table for further analysis or reporting.",
+            "autoUpdateComment" : true
+          },
+          "ports" : {
+            "inputs" : [ ],
+            "outputs" : [ {
+              "id" : "3lK5VBc-EPC-hyy-oUlcf$$wYQY42Dp3lGsmW4orK9YY",
+              "slug" : "out"
+            } ],
+            "selectedInputFields" : [ ],
+            "isCustomOutputSchema" : false,
+            "autoUpdateOnRun" : false
+          },
+          "properties" : {
+            "datasetId" : "datasets/validation_source"
+          }
+        },
         "Ettqs0pwjrkGipv-_ppw4$$ZTf0Y_Ho16nA41cJMWDaq" : {
           "id" : "Ettqs0pwjrkGipv-_ppw4$$ZTf0Y_Ho16nA41cJMWDaq",
           "component" : "Reformat",
           "metadata" : {
             "label" : "generateFinalSchema_1",
             "slug" : "generateFinalSchema_1",
-            "x" : 200,
-            "y" : -120,
+            "x" : 620,
+            "y" : 20,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -960,44 +989,14 @@
             "projectName" : "ProphecySparkBasicsPython"
           }
         },
-        "K4ezNkiVa8dckEjYdXh3S$$UOOVRg7wKPDpRP9guVTHe" : {
-          "id" : "K4ezNkiVa8dckEjYdXh3S$$UOOVRg7wKPDpRP9guVTHe",
-          "component" : "Source",
-          "metadata" : {
-            "label" : "sourceTable_1",
-            "slug" : "sourceTable_1",
-            "x" : -400,
-            "y" : -120,
-            "phase" : 0,
-            "cache" : false,
-            "detailedStats" : false,
-            "isImported" : false,
-            "comment" : "Retrieves business data from a specified source table for further analysis or reporting.",
-            "autoUpdateComment" : true,
-            "dataPreview" : true
-          },
-          "ports" : {
-            "inputs" : [ ],
-            "outputs" : [ {
-              "id" : "jVZepK5wCfW7Rlu3Znh5j$$I-8Sdu2TkO-Tvws1xBc4O",
-              "slug" : "out"
-            } ],
-            "selectedInputFields" : [ ],
-            "isCustomOutputSchema" : false,
-            "autoUpdateOnRun" : false
-          },
-          "properties" : {
-            "datasetId" : "datasets/validation_source"
-          }
-        },
         "xfrZM74S3evVJJPkFPBq3$$EyMYyLtOO9t4pDxM3taRf" : {
           "id" : "xfrZM74S3evVJJPkFPBq3$$EyMYyLtOO9t4pDxM3taRf",
           "component" : "ControlFlowOutput",
           "metadata" : {
             "label" : "TableIterator_Output",
             "slug" : "TableIterator_Output",
-            "x" : 600,
-            "y" : -40,
+            "x" : 960,
+            "y" : 20,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -1133,8 +1132,8 @@
           "metadata" : {
             "label" : "expandValidationRules_1",
             "slug" : "expandValidationRules_1",
-            "x" : 0,
-            "y" : -120,
+            "x" : 420,
+            "y" : 20,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -1223,8 +1222,8 @@
           "metadata" : {
             "label" : "select_configured_columns_1",
             "slug" : "select_configured_columns_1",
-            "x" : -240,
-            "y" : -120,
+            "x" : 220,
+            "y" : 20,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -1243,7 +1242,7 @@
                   "type" : "long",
                   "nullable" : true,
                   "metadata" : {
-                    "description" : "Unique identifier for each individual in the dataset.",
+                    "description" : "Unique identifier assigned to each individual in the dataset.",
                     "mappings" : [ ],
                     "tags" : [ ]
                   }
@@ -1261,7 +1260,7 @@
                   "type" : "string",
                   "nullable" : true,
                   "metadata" : {
-                    "description" : "Email address of the individual.",
+                    "description" : "Email address used for contacting the individual.",
                     "mappings" : [ ],
                     "tags" : [ ]
                   }
@@ -1922,22 +1921,6 @@
     "relatedInformation" : [ ],
     "diagnosticType" : 2
   }, {
-    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.processes.xfrZM74S3evVJJPkFPBq3$$EyMYyLtOO9t4pDxM3taRf",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Input port Schema for MetaComponent not found port: in0. Please fix it.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
     "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.processes.bpk1DJSP3PUvP8PiKja7P$$NXDMUxeW30xqGqkVY79O4",
     "range" : {
       "start" : {
@@ -1951,6 +1934,134 @@
     },
     "severity" : 1,
     "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[0].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: source_catalog maps to Config Field with name: source_catalog but column Name with name: source_catalog not found.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[1].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: source_schema maps to Config Field with name: source_schema but column Name with name: source_schema not found.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[2].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: source_table maps to Config Field with name: source_table but column Name with name: source_table not found.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[3].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: table_key maps to Config Field with name: table_key but column Name with name: table_key not found.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[4].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: validation_run_id maps to Config Field with name: validation_run_id but column Name with name: validation_run_id not found.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[5].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: validation_timestamp maps to Config Field with name: validation_timestamp but column Name with name: validation_timestamp not found.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[6].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: source_columns maps to Config Field with name: source_columns but column Name with name: source_columns not found.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP.properties.metagemProperty.configToColumnMap[7].columnName",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "IteratorSettings error:: Column: validations maps to Config Field with name: validations but column Name with name: validations not found.",
     "tags" : [ ],
     "relatedInformation" : [ ]
   }, {

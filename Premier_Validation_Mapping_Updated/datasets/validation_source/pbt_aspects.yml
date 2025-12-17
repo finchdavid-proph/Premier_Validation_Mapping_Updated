@@ -6,7 +6,7 @@ schema:
     type: long
     nullable: true
     metadata:
-      description: Unique identifier for each individual in the dataset.
+      description: Unique identifier assigned to each individual in the dataset.
       mappings: []
       tags: []
   - name: name
@@ -20,7 +20,7 @@ schema:
     type: string
     nullable: true
     metadata:
-      description: Email address of the individual.
+      description: Email address used for contacting the individual.
       mappings: []
       tags: []
   - name: age
