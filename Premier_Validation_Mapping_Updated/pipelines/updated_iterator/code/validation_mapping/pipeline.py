@@ -10,9 +10,9 @@ def pipeline(spark: SparkSession) -> None:
     df_validationRules = validationRules(spark)
     df_addMetadata = addMetadata(spark, df_validationRules)
     df_groupByTable = groupByTable(spark, df_addMetadata)
-    df_extract_required_columns = extract_required_columns(spark, df_groupByTable)
+    df_extractRequiredColumns = extractRequiredColumns(spark, df_groupByTable)
     df_validateTableIterator = validateTableIterator(Config.validateTableIterator)\
-                                   .apply(spark, df_extract_required_columns)
+                                   .apply(spark, df_extractRequiredColumns)
     validationOutput(spark, df_validateTableIterator)
 
 def main():

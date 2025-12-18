@@ -6,7 +6,7 @@ from prophecy.libs import typed_lit
 from validation_mapping.config.ConfigStore import *
 from validation_mapping.functions import *
 
-def extract_required_columns(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def extractRequiredColumns(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
         col("source_catalog"), 
         col("source_schema"), 

@@ -1296,15 +1296,12 @@
           "metadata" : {
             "label" : "TableIterator_Output",
             "slug" : "TableIterator_Output",
-            "x" : 960,
+            "x" : 980,
             "y" : 20,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
             "isImported" : false,
-            "visualProperty" : {
-              "isHidden" : false
-            },
             "dataPreview" : false,
             "showRecordsCount" : false
           },
@@ -1845,8 +1842,8 @@
       "id" : "TpUk1EV9V6g05sVoTYx2o$$oCUDIj9IUUk_bQT7DQ2xZ",
       "component" : "Reformat",
       "metadata" : {
-        "label" : "extract_required_columns",
-        "slug" : "extract_required_columns",
+        "label" : "extractRequiredColumns",
+        "slug" : "extractRequiredColumns",
         "x" : 620,
         "y" : 20,
         "phase" : 0,
@@ -2156,7 +2153,7 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##validations", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##source_schema", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##source_catalog", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##table_key", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##source_table", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##validation_timestamp", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##validation_run_id" ]
+        "columnsSelector" : [ "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##validation_run_id", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##validation_timestamp", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##source_schema", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##table_key", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##source_catalog", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##source_table", "KELJajsOJHUrlO_9-tza-$$FXaz8EDdTRxAJj16vmxn6##validations" ]
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.53&projectSubscriptionProjectId=12654&path=gems/Reformat",
