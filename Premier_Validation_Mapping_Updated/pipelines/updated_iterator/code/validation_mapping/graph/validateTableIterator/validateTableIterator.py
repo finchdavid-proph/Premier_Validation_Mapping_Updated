@@ -7,7 +7,7 @@ from . import *
 from .config import *
 
 
-class TableIterator_2(MetaGemExec):
+class validateTableIterator(MetaGemExec):
 
     def __init__(self, config):
         self.config = config
@@ -16,12 +16,12 @@ class TableIterator_2(MetaGemExec):
     def execute(self, spark: SparkSession, subgraph_config: SubgraphConfig) -> List[DataFrame]:
         Config.update(subgraph_config)
         df_source_table = source_table(spark)
-        df_select_configured_columns_1 = select_configured_columns_1(spark, df_source_table)
-        df_expandValidationRules_1 = expandValidationRules_1(spark, df_select_configured_columns_1)
-        df_generateFinalSchema_1 = generateFinalSchema_1(spark, df_expandValidationRules_1)
+        df_selectRequiredColumns = selectRequiredColumns(spark, df_source_table)
+        df_validateTable = validateTable(spark, df_selectRequiredColumns)
+        df_generateFinalSchema = generateFinalSchema(spark, df_validateTable)
         subgraph_config.update(Config)
 
-        return list((df_generateFinalSchema_1, ))
+        return list((df_generateFinalSchema, ))
 
     def apply(self, spark: SparkSession, in0: DataFrame, ) -> DataFrame:
         inDFs = []

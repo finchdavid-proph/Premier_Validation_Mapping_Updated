@@ -104,7 +104,7 @@
           "isReferenced" : false,
           "isProjectConfig" : true
         }, {
-          "name" : "TableIterator_2",
+          "name" : "validateTableIterator",
           "kind" : {
             "type" : "record",
             "fields" : [ {
@@ -785,8 +785,8 @@
       "id" : "AfQjCY8TLtcQul8-jCDxj$$0qErHHHNEKmZ9CiHgYmcP",
       "component" : "TableIterator",
       "metadata" : {
-        "label" : "TableIterator_2",
-        "slug" : "TableIterator_2",
+        "label" : "validateTableIterator",
+        "slug" : "validateTableIterator",
         "x" : 820,
         "y" : 20,
         "phase" : 0,
@@ -988,7 +988,10 @@
         "source" : "Ettqs0pwjrkGipv-_ppw4$$ZTf0Y_Ho16nA41cJMWDaq",
         "sourcePort" : "xYFO1b2xu9oEyvL4b-QUl$$PLsPpwBgAg7JBIiGMTbyS",
         "target" : "xfrZM74S3evVJJPkFPBq3$$EyMYyLtOO9t4pDxM3taRf",
-        "targetPort" : "3qUKVk1iEiy4jdP8HnkIh$$jSEh0uJnADnUooK3of9vW"
+        "targetPort" : "3qUKVk1iEiy4jdP8HnkIh$$jSEh0uJnADnUooK3of9vW",
+        "visualProperty" : {
+          "isHidden" : false
+        }
       }, {
         "id" : "SfXrUTsXjysTFHjszQXqw$$GvU3AcvmwxeqSfip1Eu5P",
         "source" : "MSpKAd7DiCdbuSPghsZJB$$FLQgOA9khzRQyadwd9x1t",
@@ -1030,8 +1033,8 @@
           "id" : "Ettqs0pwjrkGipv-_ppw4$$ZTf0Y_Ho16nA41cJMWDaq",
           "component" : "Reformat",
           "metadata" : {
-            "label" : "generateFinalSchema_1",
-            "slug" : "generateFinalSchema_1",
+            "label" : "generateFinalSchema",
+            "slug" : "generateFinalSchema",
             "x" : 620,
             "y" : 20,
             "phase" : 0,
@@ -1280,7 +1283,7 @@
             } ],
             "importString" : "",
             "activeTab" : "expressions",
-            "columnsSelector" : [ "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA##validation_duration_ms", "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA##validation_result", "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA##validation_logic", "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA##source_columns", "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA##row_count" ]
+            "columnsSelector" : [ "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA##validation_logic", "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA##validation_result", "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA##validation_duration_ms", "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA##row_count", "lgd-tKYVmK8RNSP6m0EEZ$$MchMXpNdmQlOOd8-h_VSA##source_columns" ]
           },
           "componentInfo" : {
             "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.2.53&projectSubscriptionProjectId=12654&path=gems/Reformat",
@@ -1299,6 +1302,9 @@
             "cache" : false,
             "detailedStats" : false,
             "isImported" : false,
+            "visualProperty" : {
+              "isHidden" : false
+            },
             "dataPreview" : false,
             "showRecordsCount" : false
           },
@@ -1432,8 +1438,8 @@
           "id" : "7LnCuxjGXtjiVzycTX69f$$hopzjF15tpolCX6UqZBuL",
           "component" : "Script",
           "metadata" : {
-            "label" : "expandValidationRules_1",
-            "slug" : "expandValidationRules_1",
+            "label" : "validateTable",
+            "slug" : "validateTable",
             "x" : 420,
             "y" : 20,
             "phase" : 0,
@@ -1558,8 +1564,8 @@
           "id" : "BN-yoBhdGOazyOQv0cHEt$$nURrJ0rVuXs4qJdwTLfb7",
           "component" : "Script",
           "metadata" : {
-            "label" : "select_configured_columns_1",
-            "slug" : "select_configured_columns_1",
+            "label" : "selectRequiredColumns",
+            "slug" : "selectRequiredColumns",
             "x" : 220,
             "y" : 20,
             "phase" : 0,

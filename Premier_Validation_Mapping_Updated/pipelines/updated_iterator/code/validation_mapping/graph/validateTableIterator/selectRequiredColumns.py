@@ -6,7 +6,7 @@ from prophecy.libs import typed_lit
 from .config import *
 from validation_mapping.functions import *
 
-def select_configured_columns_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def selectRequiredColumns(spark: SparkSession, in0: DataFrame) -> DataFrame:
     from pyspark.sql.functions import col
     source_columns = Config.source_columns if hasattr(Config, 'source_columns') else None
 

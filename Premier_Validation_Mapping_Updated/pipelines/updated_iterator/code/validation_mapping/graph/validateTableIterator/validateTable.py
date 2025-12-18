@@ -6,7 +6,7 @@ from prophecy.libs import typed_lit
 from .config import *
 from validation_mapping.functions import *
 
-def expandValidationRules_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def validateTable(spark: SparkSession, in0: DataFrame) -> DataFrame:
     from pyspark.sql.types import StructType, StructField, StringType, LongType, ArrayType
     from pyspark.sql.functions import expr
     import time

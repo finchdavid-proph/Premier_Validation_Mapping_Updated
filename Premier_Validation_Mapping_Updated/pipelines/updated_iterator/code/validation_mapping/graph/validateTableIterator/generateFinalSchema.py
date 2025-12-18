@@ -6,7 +6,7 @@ from prophecy.libs import typed_lit
 from .config import *
 from validation_mapping.functions import *
 
-def generateFinalSchema_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def generateFinalSchema(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.select(
         lit(Config.validation_run_id).alias("validation_run_id"), 
         lit(Config.validation_timestamp).alias("validation_timestamp"), 
