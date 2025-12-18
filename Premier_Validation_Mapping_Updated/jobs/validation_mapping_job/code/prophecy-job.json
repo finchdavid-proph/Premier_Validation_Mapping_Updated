@@ -141,7 +141,7 @@
             "isReferenced" : false,
             "isWorkflowNodeConfiguration" : false
           }, {
-            "name" : "TableIterator_2",
+            "name" : "validateTableIterator",
             "optional" : false,
             "kind" : {
               "type" : "record",
